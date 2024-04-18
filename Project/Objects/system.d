@@ -2,11 +2,6 @@
   ..\FreeRTOS\Include\FreeRTOS.h \
   D:\keil_v5\ARM\ARMCLANG\include\stddef.h \
   D:\keil_v5\ARM\ARMCLANG\include\stdint.h ..\User\FreeRTOSConfig.h \
-  ..\FreeRTOS\Include\projdefs.h ..\FreeRTOS\Include\portable.h \
-  ..\FreeRTOS\Include\deprecated_definitions.h \
-  ..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h \
-  ..\FreeRTOS\Include\mpu_wrappers.h ..\FreeRTOS\Include\task.h \
-  ..\FreeRTOS\Include\list.h \
   ..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h \
   ..\Firmware\CMSIS\core_cm4.h ..\Firmware\CMSIS\core_cmInstr.h \
   ..\Firmware\CMSIS\core_cmFunc.h ..\Firmware\CMSIS\core_cm4_simd.h \
@@ -42,8 +37,13 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_exmc.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_ipa.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h \
-  ..\User\systick.h D:\keil_v5\ARM\ARMCLANG\include\stdio.h \
-  D:\keil_v5\ARM\ARMCLANG\include\string.h ..\User\main.h ..\User\sys.h \
-  ..\Hardware\Include\bsp_led.h ..\Hardware\Include\bsp_usart.h \
+  ..\Hardware\Include\bsp_usart.h ..\User\systick.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stdio.h ..\FreeRTOS\Include\projdefs.h \
+  ..\FreeRTOS\Include\portable.h \
+  ..\FreeRTOS\Include\deprecated_definitions.h \
+  ..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h \
+  ..\FreeRTOS\Include\mpu_wrappers.h ..\FreeRTOS\Include\task.h \
+  ..\FreeRTOS\Include\list.h D:\keil_v5\ARM\ARMCLANG\include\string.h \
+  ..\User\main.h ..\User\sys.h ..\Hardware\Include\bsp_led.h \
   ..\Hardware\Include\bsp_key.h ..\Hardware\Include\bsp_pwm.h \
   ..\Hardware\Include\bsp_basic_timer.h ..\Hardware\Include\bsp_dma.h

@@ -37,7 +37,9 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h \
   ..\User\main.h ..\User\systick.h ..\FreeRTOS\Include\FreeRTOS.h \
   D:\keil_v5\ARM\ARMCLANG\include\stddef.h ..\User\FreeRTOSConfig.h \
-  ..\FreeRTOS\Include\projdefs.h ..\FreeRTOS\Include\portable.h \
+  ..\Hardware\Include\bsp_usart.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stdio.h ..\FreeRTOS\Include\projdefs.h \
+  ..\FreeRTOS\Include\portable.h \
   ..\FreeRTOS\Include\deprecated_definitions.h \
   ..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h \
   ..\FreeRTOS\Include\mpu_wrappers.h ..\FreeRTOS\Include\task.h \
