@@ -1,0 +1,148 @@
+#include "system.h"
+
+void CrateTask(void *pvParameters);
+void task_a(void *pvParameters);
+void task_b(void *pvParameters);
+
+TaskHandle_t StartTask_Handler;
+
+/*!
+    \brief    main function
+    \param[in]  none
+    \param[out] none
+    \retval     none
+*/
+int main(void)
+{
+
+	  uint16_t uicount = 0;
+	  float fcount = 0.0;
+	
+    systick_config();
+	
+	  led_gpio_config();  // led初始化
+	  usart_gpio_config(9600U);
+	
+	
+		xTaskCreate(CrateTask ,"CrateTask" , 128, NULL, 1, &StartTask_Handler);
+		
+		vTaskStartScheduler();          //开启任务调度
+	
+    while(1) 
+		{
+			
+    }
+}
+
+
+void CrateTask(void *pvParameters){
+	
+	taskENTER_CRITICAL();
+	
+	xTaskCreate(task_a , "task_a" ,50 ,NULL , 2 ,0);
+	
+	xTaskCreate(task_b , "task_b" ,50 ,NULL , 2 ,0);
+	
+	vTaskDelete(StartTask_Handler);
+	
+	taskEXIT_CRITICAL(); 
+	
+}
+
+void task_a(void *pvParameters)
+{  
+	
+	while(1){
+		
+    PDout(7) = 1;
+		vTaskDelay(300);
+		PDout(7) = 0;
+		vTaskDelay(300);
+	}
+}   
+
+void task_b(void *pvParameters)
+{
+	while(1){
+		PAout(5) = 1;
+		vTaskDelay(200);
+		PAout(5) = 0;
+		vTaskDelay(200);
+		
+	}
+}
+// TaskHandle_t startTaskHandle;
+// void startTask(void *parameter);
+// static void LED_Task(void *parameter);
+
+// int main(void)
+// {
+//     uint16_t uicount = 0;
+//     float fcount = 0;
+//     systeminit();
+//     xTaskCreate(startTask, "START_TASK", 300, NULL, 2, &startTaskHandle);
+//     vTaskStartScheduler();
+  
+// 	while (1)
+//     {
+//         /* pwm_breathing_lamp();
+//         if(g_recv_complete_flag)                        //数据接收完成
+//         {
+//             g_recv_complete_flag = 0;
+//             printf("g_recv_length:%d ",g_recv_length); 
+//             printf("g_recv_buff:%s\r\n ",g_recv_buff);
+//             memset(g_recv_buff, 0, g_recv_length);      //清空数组
+//             g_recv_length = 0;
+//         } */
+//     };
+
+//     /* while (1)
+//     {
+//         pwm_breathing_lamp();
+//     } */
+    
+//     /* while(1) 
+//     {
+        
+//         gpio_bit_write(PORT_LED2, PIN_LED2, SET);
+//         delay_1ms(1000);
+//         gpio_bit_write(PORT_LED2, PIN_LED2, RESET);
+//         delay_1ms(1000);
+//         uicount++;
+//         fcount += 0.1;
+//         printf("uicount = %d, fcount = %.2f\n\r", uicount, fcount);                    
+//     } */
+
+//     /* while (1)
+//     {
+//         key_scan();      //按键扫描
+//     } */
+
+    
+// }
+
+// void startTask(void *parameter)
+// {
+//     taskENTER_CRITICAL();
+
+//     xTaskCreate(LED_Task, "LED_Task", 150, NULL, 5, NULL);
+    
+//     printf("Free heap: %d bytes\n", xPortGetFreeHeapSize());			/*打印剩余堆栈大小*/
+	
+// 	vTaskDelete(startTaskHandle);										/*删除开始任务*/
+
+// 	taskEXIT_CRITICAL();	/*退出临界区*/
+// }
+// static void LED_Task(void *parameter)
+//     {
+//         while (1)
+//         {
+//             gpio_bit_write(PORT_LED2, PIN_LED2, SET);
+//             vTaskDelay(500);
+            
+//             gpio_bit_write(PORT_LED2, PIN_LED2, RESET);
+//             vTaskDelay(500);
+            
+//         }
+        
+//     }
