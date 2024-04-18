@@ -1,12 +1,9 @@
-.\objects\list.o: ..\FreeRTOS\Source\list.c
-.\objects\list.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\list.o: ..\FreeRTOS\Include\FreeRTOS.h
-.\objects\list.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\list.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\list.o: ..\User\FreeRTOSConfig.h
-.\objects\list.o: ..\FreeRTOS\Include\projdefs.h
-.\objects\list.o: ..\FreeRTOS\Include\portable.h
-.\objects\list.o: ..\FreeRTOS\Include\deprecated_definitions.h
-.\objects\list.o: ..\FreeRTOS\Port\RVDS\ARM_CM4F\portmacro.h
-.\objects\list.o: ..\FreeRTOS\Include\mpu_wrappers.h
-.\objects\list.o: ..\FreeRTOS\Include\list.h
+./objects/list.o: ..\FreeRTOS\Source\list.c \
+  D:\keil_v5\ARM\ARMCLANG\include\stdlib.h \
+  ..\FreeRTOS\Include\FreeRTOS.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stddef.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stdint.h ..\User\FreeRTOSConfig.h \
+  ..\FreeRTOS\Include\projdefs.h ..\FreeRTOS\Include\portable.h \
+  ..\FreeRTOS\Include\deprecated_definitions.h \
+  ..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h \
+  ..\FreeRTOS\Include\mpu_wrappers.h ..\FreeRTOS\Include\list.h

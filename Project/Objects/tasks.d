@@ -1,16 +1,12 @@
-.\objects\tasks.o: ..\FreeRTOS\Source\tasks.c
-.\objects\tasks.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\tasks.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\string.h
-.\objects\tasks.o: ..\FreeRTOS\Include\FreeRTOS.h
-.\objects\tasks.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\tasks.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\tasks.o: ..\User\FreeRTOSConfig.h
-.\objects\tasks.o: ..\FreeRTOS\Include\projdefs.h
-.\objects\tasks.o: ..\FreeRTOS\Include\portable.h
-.\objects\tasks.o: ..\FreeRTOS\Include\deprecated_definitions.h
-.\objects\tasks.o: ..\FreeRTOS\Port\RVDS\ARM_CM4F\portmacro.h
-.\objects\tasks.o: ..\FreeRTOS\Include\mpu_wrappers.h
-.\objects\tasks.o: ..\FreeRTOS\Include\task.h
-.\objects\tasks.o: ..\FreeRTOS\Include\list.h
-.\objects\tasks.o: ..\FreeRTOS\Include\timers.h
-.\objects\tasks.o: ..\FreeRTOS\Include\stack_macros.h
+./objects/tasks.o: ..\FreeRTOS\Source\tasks.c \
+  D:\keil_v5\ARM\ARMCLANG\include\stdlib.h \
+  D:\keil_v5\ARM\ARMCLANG\include\string.h \
+  ..\FreeRTOS\Include\FreeRTOS.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stddef.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stdint.h ..\User\FreeRTOSConfig.h \
+  ..\FreeRTOS\Include\projdefs.h ..\FreeRTOS\Include\portable.h \
+  ..\FreeRTOS\Include\deprecated_definitions.h \
+  ..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h \
+  ..\FreeRTOS\Include\mpu_wrappers.h ..\FreeRTOS\Include\task.h \
+  ..\FreeRTOS\Include\list.h ..\FreeRTOS\Include\timers.h \
+  ..\FreeRTOS\Include\stack_macros.h

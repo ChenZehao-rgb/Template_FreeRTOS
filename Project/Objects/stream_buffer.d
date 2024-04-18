@@ -1,14 +1,10 @@
-.\objects\stream_buffer.o: ..\FreeRTOS\Source\stream_buffer.c
-.\objects\stream_buffer.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\stream_buffer.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\string.h
-.\objects\stream_buffer.o: ..\FreeRTOS\Include\FreeRTOS.h
-.\objects\stream_buffer.o: D:\keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\stream_buffer.o: ..\User\FreeRTOSConfig.h
-.\objects\stream_buffer.o: ..\FreeRTOS\Include\projdefs.h
-.\objects\stream_buffer.o: ..\FreeRTOS\Include\portable.h
-.\objects\stream_buffer.o: ..\FreeRTOS\Include\deprecated_definitions.h
-.\objects\stream_buffer.o: ..\FreeRTOS\Port\RVDS\ARM_CM4F\portmacro.h
-.\objects\stream_buffer.o: ..\FreeRTOS\Include\mpu_wrappers.h
-.\objects\stream_buffer.o: ..\FreeRTOS\Include\task.h
-.\objects\stream_buffer.o: ..\FreeRTOS\Include\list.h
-.\objects\stream_buffer.o: ..\FreeRTOS\Include\stream_buffer.h
+./objects/stream_buffer.o: ..\FreeRTOS\Source\stream_buffer.c \
+  D:\keil_v5\ARM\ARMCLANG\include\stdint.h \
+  D:\keil_v5\ARM\ARMCLANG\include\string.h \
+  ..\FreeRTOS\Include\FreeRTOS.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stddef.h ..\User\FreeRTOSConfig.h \
+  ..\FreeRTOS\Include\projdefs.h ..\FreeRTOS\Include\portable.h \
+  ..\FreeRTOS\Include\deprecated_definitions.h \
+  ..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h \
+  ..\FreeRTOS\Include\mpu_wrappers.h ..\FreeRTOS\Include\task.h \
+  ..\FreeRTOS\Include\list.h ..\FreeRTOS\Include\stream_buffer.h
