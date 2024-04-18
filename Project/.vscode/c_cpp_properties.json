@@ -18,9 +18,9 @@
                 "d:\\Z_Project\\lc_liang_GD32F470\\Template_FreeRTOS\\Firmware\\GD32F4xx_standard_peripheral\\Source",
                 "d:\\Z_Project\\lc_liang_GD32F470\\Template_FreeRTOS\\Firmware\\CMSIS\\GD\\GD32F4xx\\Source\\ARM",
                 "d:\\Z_Project\\lc_liang_GD32F470\\Template_FreeRTOS\\Firmware\\CMSIS\\GD\\GD32F4xx\\Source",
-                "d:\\Z_Project\\lc_liang_GD32F470\\Template_FreeRTOS\\Doc",
                 "d:\\Z_Project\\lc_liang_GD32F470\\Template_FreeRTOS\\FreeRTOS\\Source",
-                "d:\\Z_Project\\lc_liang_GD32F470\\Template_FreeRTOS\\FreeRTOS\\Port\\MemMang"
+                "d:\\Z_Project\\lc_liang_GD32F470\\Template_FreeRTOS\\FreeRTOS\\Port\\MemMang",
+                "d:\\Z_Project\\lc_liang_GD32F470\\Template_FreeRTOS"
             ],
             "defines": [
                 "USE_STDPERIPH_DRIVER",

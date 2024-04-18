@@ -530,16 +530,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Doc</GroupName>
-          <Files>
-            <File>
-              <FileName>readme.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Doc\readme.txt</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>FreeRTOS/Src</GroupName>
           <Files>
             <File>
@@ -591,6 +581,16 @@
               <FileName>port.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\FreeRTOS\Port\GCC\ARM_CM4F\port.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Doc</GroupName>
+          <Files>
+            <File>
+              <FileName>README.md</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\README.md</FilePath>
             </File>
           </Files>
         </Group>
