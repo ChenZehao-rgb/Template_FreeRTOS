@@ -44,6 +44,7 @@
   ..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h \
   ..\FreeRTOS\Include\mpu_wrappers.h ..\FreeRTOS\Include\task.h \
   ..\FreeRTOS\Include\list.h D:\keil_v5\ARM\ARMCLANG\include\string.h \
-  ..\User\main.h ..\User\sys.h ..\Hardware\Include\bsp_led.h \
+  ..\User\main.h ..\User\sys.h D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
+  ..\User\delay.h ..\Hardware\Include\bsp_led.h \
   ..\Hardware\Include\bsp_key.h ..\Hardware\Include\bsp_pwm.h \
   ..\Hardware\Include\bsp_basic_timer.h ..\Hardware\Include\bsp_dma.h

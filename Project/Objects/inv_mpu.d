@@ -1,9 +1,12 @@
-./objects/bsp_key.o: ..\Hardware\Source\bsp_key.c \
-  ..\Hardware\Include\bsp_key.h \
+./objects/inv_mpu.o: ..\Hardware\Source\inv_mpu.c \
+  D:\keil_v5\ARM\ARMCLANG\include\stdio.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stdint.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stdlib.h \
+  D:\keil_v5\ARM\ARMCLANG\include\string.h \
+  D:\keil_v5\ARM\ARMCLANG\include\math.h ..\Hardware\Include\inv_mpu.h \
   ..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h \
-  ..\Firmware\CMSIS\core_cm4.h D:\keil_v5\ARM\ARMCLANG\include\stdint.h \
-  ..\Firmware\CMSIS\core_cmInstr.h ..\Firmware\CMSIS\core_cmFunc.h \
-  ..\Firmware\CMSIS\core_cm4_simd.h \
+  ..\Firmware\CMSIS\core_cm4.h ..\Firmware\CMSIS\core_cmInstr.h \
+  ..\Firmware\CMSIS\core_cmFunc.h ..\Firmware\CMSIS\core_cm4_simd.h \
   ..\Firmware\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h \
   ..\User\gd32f4xx_libopt.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h \
@@ -32,11 +35,11 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_wwdgt.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_misc.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_enet.h \
-  D:\keil_v5\ARM\ARMCLANG\include\stdlib.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_exmc.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_ipa.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h \
-  ..\User\systick.h ..\User\sys.h \
+  ..\Hardware\Include\inv_mpu_dmp_motion_driver.h \
+  ..\Hardware\Include\mpu6050.h ..\User\systick.h \
+  ..\Hardware\Include\bsp_usart.h ..\User\delay.h ..\User\sys.h \
   D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
-  D:\keil_v5\ARM\ARMCLANG\include\stddef.h ..\User\delay.h \
-  ..\Hardware\Include\bsp_led.h D:\keil_v5\ARM\ARMCLANG\include\stdio.h
+  D:\keil_v5\ARM\ARMCLANG\include\stddef.h

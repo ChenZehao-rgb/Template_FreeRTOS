@@ -1,6 +1,12 @@
 {
     "files.associations": {
         "stdint.h": "c",
-        "system.h": "c"
+        "system.h": "c",
+        "delay.h": "c",
+        "stdbool.h": "c",
+        "gd32f4xx.h": "c",
+        "sys.h": "c",
+        "freertos.h": "c",
+        "systick.h": "c"
     }
 }

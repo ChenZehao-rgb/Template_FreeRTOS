@@ -35,49 +35,41 @@ OF SUCH DAMAGE.
 #include "gd32f4xx.h"
 #include "systick.h"
 
-volatile static uint32_t delay;
+#include "FreeRTOS.h"		 
+#include "task.h"
+static uint32_t sysTickCnt=0;
 
-/*!
-    \brief    configure systick
-    \param[in]  none
-    \param[out] none
-    \retval     none
-*/
-void systick_config(void)
+void nvicInit(void)
 {
-    /* setup systick timer for 1000Hz interrupts */
-    if(SysTick_Config(SystemCoreClock / 1000U)) {
-        /* capture error */
-        while(1) {
-        }
-    }
-    /* configure the systick handler priority */
-    NVIC_SetPriority(SysTick_IRQn, 0x00U);
+	nvic_priority_group_set(NVIC_PRIGROUP_PRE4_SUB0);
 }
 
-/*!
-    \brief    delay a time in milliseconds
-    \param[in]  count: count in milliseconds
-    \param[out] none
-    \retval     none
-*/
-void delay_1ms(uint32_t count)
-{
-    delay = count;
+extern void xPortSysTickHandler(void);
 
-    while(0U != delay) {
-    }
+/********************************************************
+ *SysTick_Handler()
+ *滴答定时器中断服务函数
+*********************************************************/
+void  SysTick_Handler(void)
+{
+	if(xTaskGetSchedulerState()!=taskSCHEDULER_NOT_STARTED)	/*系统已经运行*/
+    {
+        xPortSysTickHandler();	
+    }else
+	{
+		sysTickCnt++;	/*调度开启之前计数*/
+	}
 }
 
-/*!
-    \brief    delay decrement
-    \param[in]  none
-    \param[out] none
-    \retval     none
-*/
-void delay_decrement(void)
+/********************************************************
+*getSysTickCnt()
+*调度开启之前 返回 sysTickCnt
+*调度开启之前 返回 xTaskGetTickCount()
+*********************************************************/
+uint32_t getSysTickCnt(void)
 {
-    if(0U != delay) {
-        delay--;
-    }
+	if(xTaskGetSchedulerState()!=taskSCHEDULER_NOT_STARTED)	/*系统已经运行*/
+		return xTaskGetTickCount();
+	else
+		return sysTickCnt;
 }

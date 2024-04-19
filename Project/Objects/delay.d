@@ -1,5 +1,4 @@
-./objects/bsp_key.o: ..\Hardware\Source\bsp_key.c \
-  ..\Hardware\Include\bsp_key.h \
+./objects/delay.o: ..\User\delay.c ..\User\delay.h ..\User\sys.h \
   ..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h \
   ..\Firmware\CMSIS\core_cm4.h D:\keil_v5\ARM\ARMCLANG\include\stdint.h \
   ..\Firmware\CMSIS\core_cmInstr.h ..\Firmware\CMSIS\core_cmFunc.h \
@@ -36,7 +35,13 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_exmc.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_ipa.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h \
-  ..\User\systick.h ..\User\sys.h \
-  D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
-  D:\keil_v5\ARM\ARMCLANG\include\stddef.h ..\User\delay.h \
-  ..\Hardware\Include\bsp_led.h D:\keil_v5\ARM\ARMCLANG\include\stdio.h
+  ..\User\systick.h D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stddef.h \
+  ..\FreeRTOS\Include\FreeRTOS.h ..\User\FreeRTOSConfig.h \
+  ..\Hardware\Include\bsp_usart.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stdio.h ..\FreeRTOS\Include\projdefs.h \
+  ..\FreeRTOS\Include\portable.h \
+  ..\FreeRTOS\Include\deprecated_definitions.h \
+  ..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h \
+  ..\FreeRTOS\Include\mpu_wrappers.h ..\FreeRTOS\Include\task.h \
+  ..\FreeRTOS\Include\list.h

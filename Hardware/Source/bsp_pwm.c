@@ -1,5 +1,5 @@
 #include "bsp_pwm.h"
-
+#include "delay.h"
 /************************************************
 函数名称 ： pwm_gpio_config
 功    能 ： pwm引脚配置
@@ -90,5 +90,5 @@ void pwm_breathing_lamp(void)
 			direct = 0;
 	}
 	timer_channel_output_pulse_value_config(BSP_PWM_TIMER,BSP_PWM_CHANNEL,value); // 配置定时器通道输出脉冲值
-	delay_1ms(50);                                                                // 延时50ms
+	delay_ms(50);                                                                // 延时50ms
 }

@@ -3,6 +3,12 @@
 
 #include "gd32f4xx.h"
 #include "systick.h"
+#include <stdbool.h>
+#include <stdint.h>
+#include <stddef.h>
+#include "delay.h"
+
+#define SYSTEM_SUPPORT_OS    1 //定义系统是否支持OS
 
 
 #define BIT_ADDR(byte_offset,bit_number) (volatile unsigned long*)(0x42000000 +(byte_offset << 5)+(bit_number << 2))

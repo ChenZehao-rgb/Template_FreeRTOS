@@ -273,7 +273,6 @@ See http://www.FreeRTOS.org/RTOS-Cortex-M3-M4.html. */
 standard names. */
 #define vPortSVCHandler SVC_Handler
 #define xPortPendSVHandler PendSV_Handler
-#define xPortSysTickHandler SysTick_Handler
 
 /* 以下为使用Percepio Tracealyzer需要的东西，不需要时将 configUSE_TRACE_FACILITY (可视化跟踪)定义为 0 */
 #if ( configUSE_TRACE_FACILITY == 1 )

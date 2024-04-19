@@ -63,7 +63,7 @@ void key_scan(void)
 	/* 先读取按键引脚的电平 如果高电平，按键按下 */
 	if(gpio_input_bit_get(BSP_KEY_PORT,BSP_KEY_PIN) == SET)         // 按键按下
 	{
-		delay_1ms(20);  // 延迟消抖 
+		delay_ms(20);  // 延迟消抖 
 		if(gpio_input_bit_get(BSP_KEY_PORT,BSP_KEY_PIN) == SET)       // 再次检测按键是否按下 
 		{
 			/* 执行对应的功能 */
