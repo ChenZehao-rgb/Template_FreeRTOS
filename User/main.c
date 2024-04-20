@@ -9,6 +9,7 @@ int main(void)
     uint16_t uicount = 0;
     float fcount = 0;
     systeminit();
+    
     xTaskCreate(startTask, "START_TASK", 300, NULL, 1, &startTaskHandle);
     vTaskStartScheduler();
   
@@ -55,6 +56,8 @@ void startTask(void *parameter)
     taskENTER_CRITICAL();
 
     xTaskCreate(LED_Task, "LED_Task", 150, NULL, 2, NULL);
+
+    xTaskCreate(motorTask, "motorTask", 150, NULL, 2, NULL);
     
     printf("Free heap: %d bytes\n", xPortGetFreeHeapSize());			/*打印剩余堆栈大小*/
 	

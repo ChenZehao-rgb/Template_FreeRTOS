@@ -7,6 +7,7 @@ void systeminit(void)
     nvicInit();
     led_gpio_config();
     usart_gpio_config(9600U);
+    motor_config();
     /* 
     key_gpio_config();
     basic_timer_config(20000,10000);

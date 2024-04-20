@@ -16,6 +16,7 @@
 ".\objects\inv_mpu_dmp_motion_driver.o"
 ".\objects\mpu6050.o"
 ".\objects\soft_i2c.o"
+".\objects\motor.o"
 ".\objects\gd32f4xx_gpio.o"
 ".\objects\gd32f4xx_rcu.o"
 ".\objects\gd32f4xx_misc.o"

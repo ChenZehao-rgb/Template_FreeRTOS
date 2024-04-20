@@ -7,6 +7,8 @@
         "gd32f4xx.h": "c",
         "sys.h": "c",
         "freertos.h": "c",
-        "systick.h": "c"
+        "systick.h": "c",
+        "bsp_pwm.h": "c",
+        "motor.h": "c"
     }
 }

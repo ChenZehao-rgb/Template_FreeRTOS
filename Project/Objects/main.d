@@ -47,4 +47,5 @@
   ..\User\main.h ..\User\sys.h D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
   ..\User\delay.h ..\Hardware\Include\bsp_led.h \
   ..\Hardware\Include\bsp_key.h ..\Hardware\Include\bsp_pwm.h \
-  ..\Hardware\Include\bsp_basic_timer.h ..\Hardware\Include\bsp_dma.h
+  ..\Hardware\Include\bsp_basic_timer.h ..\Hardware\Include\bsp_dma.h \
+  ..\App\Include\motor.h

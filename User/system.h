@@ -21,6 +21,7 @@
 #include "bsp_pwm.h"
 #include "bsp_basic_timer.h"
 #include "bsp_dma.h"
+#include "motor.h"
 
 void systeminit(void);
 

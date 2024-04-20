@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,GD32F470</Define>
               <Undefine></Undefine>
-              <IncludePath>..\User;..\Firmware\CMSIS;..\Firmware\GD32F4xx_standard_peripheral\Include;..\Firmware\CMSIS\GD\GD32F4xx\Include;..\Hardware\Include;..\FreeRTOS\Include;..\FreeRTOS\Port\GCC\ARM_CM4F</IncludePath>
+              <IncludePath>..\User;..\Firmware\CMSIS;..\Firmware\GD32F4xx_standard_peripheral\Include;..\Firmware\CMSIS\GD\GD32F4xx\Include;..\Hardware\Include;..\FreeRTOS\Include;..\FreeRTOS\Port\GCC\ARM_CM4F;..\App\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -488,6 +488,13 @@
         </Group>
         <Group>
           <GroupName>App</GroupName>
+          <Files>
+            <File>
+              <FileName>motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\Source\motor.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Firmware</GroupName>
