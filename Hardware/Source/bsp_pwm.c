@@ -35,7 +35,7 @@ static void pwm_gpio_config(void)
 	gpio_output_options_set(MOTOR2_PWM_PORT,GPIO_OTYPE_PP,GPIO_OSPEED_50MHZ,MOTOR2_PWM_PIN);
 	/* 配置GPIO的复用 */
 	gpio_af_set(MOTOR1_PWM_PORT,MOTOR1_PWM_AF,MOTOR1_PWM_PIN);
-	gpio_af_set(MOTOR2_PWM_PORT,MOTOR2_PWM_AF,MOTOR2_PWM_PIN);	
+	gpio_af_set(MOTOR2_PWM_PORT,MOTOR2_PWM_AF,MOTOR2_PWM_PIN);
 }
 
 /************************************************

@@ -1,4 +1,4 @@
-./objects/motor.o: ..\App\Source\motor.c ..\App\Include\motor.h \
+./objects/encoder.o: ..\App\Source\encoder.c ..\App\Include\encoder.h \
   ..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h \
   ..\Firmware\CMSIS\core_cm4.h D:\keil_v5\ARM\ARMCLANG\include\stdint.h \
   ..\Firmware\CMSIS\core_cmInstr.h ..\Firmware\CMSIS\core_cmFunc.h \
@@ -37,12 +37,4 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h \
   ..\User\sys.h ..\User\systick.h \
   D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
-  D:\keil_v5\ARM\ARMCLANG\include\stddef.h ..\User\delay.h \
-  ..\Hardware\Include\bsp_pwm.h ..\Hardware\Include\bsp_usart.h \
-  ..\App\Include\encoder.h ..\FreeRTOS\Include\FreeRTOS.h \
-  ..\User\FreeRTOSConfig.h D:\keil_v5\ARM\ARMCLANG\include\stdio.h \
-  ..\FreeRTOS\Include\projdefs.h ..\FreeRTOS\Include\portable.h \
-  ..\FreeRTOS\Include\deprecated_definitions.h \
-  ..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h \
-  ..\FreeRTOS\Include\mpu_wrappers.h ..\FreeRTOS\Include\task.h \
-  ..\FreeRTOS\Include\list.h
+  D:\keil_v5\ARM\ARMCLANG\include\stddef.h ..\User\delay.h

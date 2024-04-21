@@ -395,9 +395,14 @@
               <FilePath>..\User\main.c</FilePath>
             </File>
             <File>
-              <FileName>systick.c</FileName>
+              <FileName>system.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\systick.c</FilePath>
+              <FilePath>..\User\system.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\delay.c</FilePath>
             </File>
             <File>
               <FileName>sys.h</FileName>
@@ -405,19 +410,14 @@
               <FilePath>..\User\sys.h</FilePath>
             </File>
             <File>
-              <FileName>system.c</FileName>
+              <FileName>systick.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\system.c</FilePath>
+              <FilePath>..\User\systick.c</FilePath>
             </File>
             <File>
               <FileName>FreeRTOSConfig.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\User\FreeRTOSConfig.h</FilePath>
-            </File>
-            <File>
-              <FileName>delay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\delay.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -493,6 +493,16 @@
               <FileName>motor.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\App\Source\motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\Source\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\Source\encoder.c</FilePath>
             </File>
           </Files>
         </Group>

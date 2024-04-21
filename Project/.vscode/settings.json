@@ -9,6 +9,8 @@
         "freertos.h": "c",
         "systick.h": "c",
         "bsp_pwm.h": "c",
-        "motor.h": "c"
+        "motor.h": "c",
+        "encoder.h": "c",
+        "bsp_adc.h": "c"
     }
 }
