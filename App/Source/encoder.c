@@ -32,7 +32,7 @@ static void Motor1_Encoder_Timer_Init(void)
 
     // 复位定时器
     timer_deinit(MOTOR1_encoder_TIMER);
-    timer_initpara.period 				= 65535;//设定计数器自动重装值
+    timer_initpara.period 				= (100-1)*4;//设定计数器自动重装值
 	timer_initpara.prescaler 			= 0; // 预分频器 
 	timer_initpara.clockdivision 		= TIMER_CKDIV_DIV1; 		// 不分频
 	timer_initpara.alignedmode 			= TIMER_COUNTER_EDGE; 	// 边缘对齐
@@ -49,6 +49,9 @@ static void Motor1_Encoder_Timer_Init(void)
     timer_input_capture_config(MOTOR1_encoder_TIMER, MOTOR1_encoderA_CHANNEL, &timer_icintpara);
     timer_input_capture_config(MOTOR1_encoder_TIMER, MOTOR1_encoderB_CHANNEL, &timer_icintpara);
 
+    //开启中断
+    nvic_irq_enable(MOTOR1_encoder_IRQ, 2, 2);
+    timer_interrupt_enable(MOTOR1_encoder_TIMER, TIMER_INT_UP);
     //清除定时器更新标志
     timer_interrupt_flag_clear(MOTOR1_encoder_TIMER, TIMER_INT_FLAG_UP);
     //定时器计数清零
@@ -70,7 +73,7 @@ static void Motor2_Encoder_Timer_Init(void)
 
     // 复位定时器
     timer_deinit(MOTOR2_encoder_TIMER);
-    timer_initpara.period 				= 65535;//设定计数器自动重装值
+    timer_initpara.period 				= (100-1)*4;//设定计数器自动重装值
 	timer_initpara.prescaler 			= 0; // 预分频器 
 	timer_initpara.clockdivision 		= TIMER_CKDIV_DIV1; 		// 不分频
 	timer_initpara.alignedmode 			= TIMER_COUNTER_EDGE; 	// 边缘对齐
@@ -87,6 +90,9 @@ static void Motor2_Encoder_Timer_Init(void)
     timer_input_capture_config(MOTOR2_encoder_TIMER, MOTOR2_encoderA_CHANNEL, &timer_icintpara);
     timer_input_capture_config(MOTOR2_encoder_TIMER, MOTOR2_encoderB_CHANNEL, &timer_icintpara);
 
+    //开启中断
+    nvic_irq_enable(MOTOR2_encoder_IRQ, 2, 2);
+    timer_interrupt_enable(MOTOR2_encoder_TIMER, TIMER_INT_UP);
     //清除定时器更新标志
     timer_interrupt_flag_clear(MOTOR2_encoder_TIMER, TIMER_INT_FLAG_UP);
     //定时器计数清零
@@ -107,8 +113,8 @@ void Motor_Encoder_Init(void)
 uint32_t Motor1_Encoder_Value(void)
 {
     uint32_t encoder_value=0;
-    encoder_value = timer_counter_read(MOTOR1_encoder_TIMER);
-    timer_counter_value_config(MOTOR1_encoder_TIMER, 0);
+    encoder_value = timer_counter_read(MOTOR1_encoder_TIMER); //读取计数值，电机正转，cnt：0->396,反转：396->0
+    // timer_counter_value_config(MOTOR1_encoder_TIMER, 0);
     return encoder_value;
 }
 
@@ -120,11 +126,18 @@ uint32_t Motor2_Encoder_Value(void)
     return encoder_value;
 }
 
+
+int circle_count = 0;
 void Motor1_Encoder_IRQHandler(void)
 {
     if(timer_interrupt_flag_get(MOTOR1_encoder_TIMER,TIMER_INT_UP) == SET)
-		{
-       timer_interrupt_flag_clear(MOTOR1_encoder_TIMER,TIMER_INT_UP);
+	{
+        uint8_t dir = (TIMER_CTL0(MOTOR1_encoder_TIMER) & 0x10) >> 4;
+        if(dir) 
+            circle_count--;
+        else
+            circle_count++;
+        timer_interrupt_flag_clear(MOTOR1_encoder_TIMER,TIMER_INT_UP);
     }
 }
 

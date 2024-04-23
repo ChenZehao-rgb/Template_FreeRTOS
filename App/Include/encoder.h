@@ -17,6 +17,8 @@
 #define MOTOR1_encoderB_PIN          GPIO_PIN_3
 #define MOTOR1_encoderB_AF           GPIO_AF_1
 #define MOTOR1_encoderB_CHANNEL      TIMER_CH_1      // 定时器通道
+#define MOTOR1_encoder_IRQ           TIMER1_IRQn
+#define Motor1_Encoder_IRQHandler    TIMER1_IRQHandler
 //motor2
 #define MOTOR2_encoder_TIMER_RCU  	 RCU_TIMER2      // 定时器时钟
 #define MOTOR2_encoder_TIMER      	 TIMER2          // 定时器
@@ -30,6 +32,8 @@
 #define MOTOR2_encoderB_PIN          GPIO_PIN_7
 #define MOTOR2_encoderB_AF           GPIO_AF_2
 #define MOTOR2_encoderB_CHANNEL      TIMER_CH_1      // 定时器通道
+#define MOTOR2_encoder_IRQ           TIMER2_IRQn
+#define Motor2_Encoder_IRQHandler    TIMER2_IRQHandler
 
 void Motor_Encoder_Init(void);
 uint32_t Motor1_Encoder_Value(void);
