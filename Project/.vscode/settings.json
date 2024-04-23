@@ -11,6 +11,10 @@
         "bsp_pwm.h": "c",
         "motor.h": "c",
         "encoder.h": "c",
-        "bsp_adc.h": "c"
+        "bsp_adc.h": "c",
+        "pid.h": "c",
+        "filter.h": "c",
+        "maths.h": "c",
+        "axis.h": "c"
     }
 }

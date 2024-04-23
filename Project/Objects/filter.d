@@ -1,8 +1,11 @@
-./objects/pid.o: ..\App\Source\pid.c ..\App\Include\pid.h \
-  ..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h \
-  ..\Firmware\CMSIS\core_cm4.h D:\keil_v5\ARM\ARMCLANG\include\stdint.h \
-  ..\Firmware\CMSIS\core_cmInstr.h ..\Firmware\CMSIS\core_cmFunc.h \
-  ..\Firmware\CMSIS\core_cm4_simd.h \
+./objects/filter.o: ..\App\Source\filter.c \
+  D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stdint.h \
+  D:\keil_v5\ARM\ARMCLANG\include\string.h \
+  D:\keil_v5\ARM\ARMCLANG\include\math.h ..\App\Include\filter.h \
+  ..\User\sys.h ..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h \
+  ..\Firmware\CMSIS\core_cm4.h ..\Firmware\CMSIS\core_cmInstr.h \
+  ..\Firmware\CMSIS\core_cmFunc.h ..\Firmware\CMSIS\core_cm4_simd.h \
   ..\Firmware\CMSIS\GD\GD32F4xx\Include\system_gd32f4xx.h \
   ..\User\gd32f4xx_libopt.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_rcu.h \
@@ -35,7 +38,5 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_exmc.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_ipa.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h \
-  ..\User\sys.h ..\User\systick.h \
-  D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
-  D:\keil_v5\ARM\ARMCLANG\include\stddef.h ..\User\delay.h \
-  ..\App\Include\filter.h ..\Common\Include\maths.h
+  ..\User\systick.h D:\keil_v5\ARM\ARMCLANG\include\stddef.h \
+  ..\User\delay.h ..\Common\Include\maths.h
