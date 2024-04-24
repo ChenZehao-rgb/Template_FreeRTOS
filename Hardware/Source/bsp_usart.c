@@ -1,6 +1,7 @@
 #include "bsp_usart.h"
 #include "stdio.h"
 #include "bsp_dma.h"
+#include "protocol.h"
 
 uint8_t  g_recv_buff[USART_RECEIVE_LENGTH];	//接收缓冲区
 uint16_t g_recv_length = 0;					//接受数据长度
@@ -84,6 +85,15 @@ void usart_send_string(uint8_t *ucstr)
 	}
 }
 
+//串口发送指定数量字符
+void usart1_send(uint8_t *data, uint8_t len)
+{
+	uint8_t i;
+	for(i=0;i<len;i++)
+	{
+		usart_send_data(data[i]);
+	}
+}
 /************************************************
 函数名称 ： fputc
 功    能 ： 串口重定向函数
@@ -116,7 +126,9 @@ void BSP_USART_IRQHandler(void)
 	#if !RX_USART_DMA
 		if(usart_interrupt_flag_get(BSP_USART, USART_INT_FLAG_RBNE) == SET) //接收缓冲区不为空
 		{
-			g_recv_buff[g_recv_length++] = usart_data_receive(BSP_USART);	//接收到数据到缓冲区
+			// g_recv_buff[g_recv_length++] = usart_data_receive(BSP_USART);	//接收到数据到缓冲区
+			uint8_t a = usart_data_receive(BSP_USART);
+			protocol_data_recv(&a, 1);
 		}
 	#endif
 

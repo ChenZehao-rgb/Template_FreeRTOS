@@ -22,7 +22,7 @@
 #define USART_RECEIVE_LENGTH    4096
 
 /*0：中断接收   1：DMA接收*/
-#define RX_USART_DMA  1
+#define RX_USART_DMA  0
 
 extern uint8_t  g_recv_buff[USART_RECEIVE_LENGTH];
 extern uint16_t g_recv_length;
@@ -31,5 +31,5 @@ extern uint8_t  g_recv_complete_flag;
 void usart_gpio_config(uint32_t band_rate);  // 配置串口
 void usart_send_data(uint8_t ucch);          // 发送一个字符
 void usart_send_string(uint8_t *ucstr);      // 发送一个字符串
-
+void usart1_send(uint8_t *data, uint8_t len);
 #endif  /* BSP_USART_H */

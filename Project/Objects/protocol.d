@@ -1,5 +1,4 @@
-./objects/bsp_usart.o: ..\Hardware\Source\bsp_usart.c \
-  ..\Hardware\Include\bsp_usart.h \
+./objects/protocol.o: ..\App\Source\protocol.c ..\App\Include\protocol.h \
   ..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h \
   ..\Firmware\CMSIS\core_cm4.h D:\keil_v5\ARM\ARMCLANG\include\stdint.h \
   ..\Firmware\CMSIS\core_cmInstr.h ..\Firmware\CMSIS\core_cmFunc.h \
@@ -36,5 +35,9 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_exmc.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_ipa.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h \
-  ..\User\systick.h D:\keil_v5\ARM\ARMCLANG\include\stdio.h \
-  ..\Hardware\Include\bsp_dma.h ..\App\Include\protocol.h
+  ..\Hardware\Include\bsp_usart.h ..\User\systick.h \
+  D:\keil_v5\ARM\ARMCLANG\include\string.h ..\App\Include\pid.h \
+  ..\User\sys.h D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stddef.h ..\User\delay.h \
+  ..\App\Include\filter.h ..\App\Include\motor.h \
+  ..\Hardware\Include\bsp_pwm.h

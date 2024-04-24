@@ -8,6 +8,7 @@
 ".\objects\pid.o"
 ".\objects\encoder.o"
 ".\objects\filter.o"
+".\objects\protocol.o"
 ".\objects\maths.o"
 ".\objects\bsp_usart.o"
 ".\objects\bsp_led.o"

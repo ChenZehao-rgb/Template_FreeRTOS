@@ -444,6 +444,11 @@
               <FileType>1</FileType>
               <FilePath>..\App\Source\filter.c</FilePath>
             </File>
+            <File>
+              <FileName>protocol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\Source\protocol.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

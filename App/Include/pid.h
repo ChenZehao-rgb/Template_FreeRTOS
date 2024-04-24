@@ -7,29 +7,26 @@
 
 typedef struct
 {
-	float desired;		//< set point
-	float error;        //< error
-	float prevError;    //< previous error
-	float integ;        //< integral
-	float deriv;        //< derivative
-	float kp;           //< proportional gain
-	float ki;           //< integral gain
-	float kd;           //< derivative gain
-	float outP;         //< proportional output (debugging)
-	float outI;         //< integral output (debugging)
-	float outD;         //< derivative output (debugging)
-	float iLimit;       //< integral limit
-	float outputLimit;  //< total PID output limit, absolute value. '0' means no limit.
-	float dt;           //< delta-time dt
-	bool enableDFilter; //< filter for D term enable flag
-	biquadFilter_t dFilter;  //< filter for D term
+	float target_val; 	//目标值
+	float Error;		//第k次误差
+	float LastError;	//Error[-1],k-1次误差
+	float PrevError;	//Error[-2],k-2次误差
+	float Kp,Ki,Kd;		//比例，积分，微分系数
+	float integral;		//积分值
+	float output_val;	//输出值
+	float iLimit;		//积分项限幅
+	float oLimit;		//输出限幅
 } PidObject;
 
-/*pid结构体初始化*/
-void pidInit(PidObject* pid, float kp, float ki, float kd, float iLimit, float outputLimit, float dt, bool enableDFilter, float cutoffFreq);
-float pidUpdate(PidObject* pid, float error);
-void pidReset(PidObject* pid);
-void pidResetIntegral(PidObject* pid);
-void pidSetIntegral(PidObject* pid, float integ);
+typedef struct 
+{
+	float kp;
+	float ki;
+	float kd;
+} pidInit_t;
+
+void PID_Param_Init(PidObject *pid, float target, float kp, float ki, float kd, float iLimit, float oLimit);
+float PosionPID_Realize(PidObject *pid, float actual_val);
+
 
 #endif  /* PID_H */

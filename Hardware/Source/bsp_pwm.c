@@ -94,7 +94,17 @@ static void pwm_config(uint16_t pre,uint16_t per)
 
 void motor1_out(uint32_t value)
 {
-	timer_channel_output_pulse_value_config(MOTOR_PWM_TIMER,MOTOR1_PWM_CHANNEL,value);
+	if(value)
+	{
+		MOTOR1_DIR=1;
+		value = 10000-value;
+	}
+	else
+	{
+		MOTOR1_DIR=0;
+		value = 10000+value;
+	}
+	timer_channel_output_pulse_value_config(MOTOR_PWM_TIMER,MOTOR1_PWM_CHANNEL,value);	
 }
 void motor2_out(uint32_t value)
 {

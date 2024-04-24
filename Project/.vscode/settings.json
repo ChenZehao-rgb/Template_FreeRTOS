@@ -15,6 +15,9 @@
         "pid.h": "c",
         "filter.h": "c",
         "maths.h": "c",
-        "axis.h": "c"
+        "axis.h": "c",
+        "protocol.h": "c",
+        "bsp_usart.h": "c",
+        "string.h": "c"
     }
 }
