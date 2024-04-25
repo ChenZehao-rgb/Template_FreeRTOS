@@ -129,6 +129,7 @@ void BSP_USART_IRQHandler(void)
 			// g_recv_buff[g_recv_length++] = usart_data_receive(BSP_USART);	//接收到数据到缓冲区
 			uint8_t a = usart_data_receive(BSP_USART);
 			protocol_data_recv(&a, 1);
+			printf("接收到命令：%d\r\n", a);
 		}
 	#endif
 

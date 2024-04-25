@@ -24,15 +24,18 @@ static float get_motor_velocity(int32_t cnt_diff, int dt, double line)
 }
 void motorTask(void *parameter)
 {
-    motor_config();
-    Motor_Encoder_Init();
-    protocol_init();
-    PID_Param_Init(&PosionPID, 1000, 10, 0.5, 0.8, 5000, 7000);
+    int target = 1000;
+    PID_Param_Init(&PosionPID, target, 10, 0.5, 0.8, 5000, 7000);
+
+    float pid_temp[3] = {PosionPID.Kp, PosionPID.Ki, PosionPID.Kd};
+    set_computer_value(SEND_P_I_D_CMD, CURVES_CH1, pid_temp, 3);// 给通道 1 发送 P I D 值
+    set_computer_value(SEND_PERIOD_CMD, CURVES_CH1, &dt, 1);     // 给通道 1 发送目标值
+    set_computer_value(SEND_START_CMD, CURVES_CH1, NULL, 0);// 同步上位机的启动按钮状态
+
     motor1_out(0);
     printf("motor_init\r\n");
     while (1)
     {
-        receiving_process();
         current_cnt=Motor1_Encoder_Value();
         cnt_diff = current_cnt - last_cnt;
         current_circle = circle_count;
@@ -46,7 +49,8 @@ void motorTask(void *parameter)
         last_circle = current_circle;
         last_cnt = current_cnt;
         // per_circle=(float)Motor1_Encoder_Data/396.0;
-        set_computer_value(SEND_FACT_CMD, CURVES_CH2, &cnt_diff, 1);
+        set_computer_value(SEND_FACT_CMD, CURVES_CH1, &cnt_diff, 1);
+        set_computer_value(SEND_TARGET_CMD, CURVES_CH1, &target, 1);
         // printf("velocity:%d, speed:%d\r\n", cnt_diff, speed);
         // printf("motor1_encoder_value:%d circle_count:%d\r\n",Motor1_Encoder_Data, circle_count);
         vTaskDelay(dt); 

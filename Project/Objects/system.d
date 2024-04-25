@@ -48,4 +48,5 @@
   ..\User\delay.h ..\Hardware\Include\bsp_led.h \
   ..\Hardware\Include\bsp_key.h ..\Hardware\Include\bsp_pwm.h \
   ..\Hardware\Include\bsp_basic_timer.h ..\Hardware\Include\bsp_dma.h \
-  ..\App\Include\motor.h
+  ..\App\Include\motor.h ..\App\Include\protocol.h \
+  ..\App\Include\encoder.h

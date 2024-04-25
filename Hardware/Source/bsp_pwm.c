@@ -114,6 +114,6 @@ void motor2_out(uint32_t value)
 void motor_config(void)
 {
 	dir_gpio_config();
-	pwm_config(20,10000);
+	pwm_config(200,5000); //50hz，周期20ms
 	
 }

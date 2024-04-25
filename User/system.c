@@ -6,7 +6,10 @@ void systeminit(void)
     delay_init(240);
     nvicInit();
     led_gpio_config();
-    usart_gpio_config(9600U);
+    usart_gpio_config(115200U);
+    motor_config();
+    Motor_Encoder_Init();
+    protocol_init();
     /* 
     key_gpio_config();
     basic_timer_config(20000,10000);

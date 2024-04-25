@@ -103,7 +103,7 @@ int8_t receiving_process(void);
   * @retval 无
   */
 void set_computer_value(uint8_t cmd, uint8_t ch, void *data, uint8_t num);
-
+void rxTask(void *parameter);
 #ifdef _cplusplus
 }
 #endif   

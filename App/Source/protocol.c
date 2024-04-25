@@ -19,7 +19,9 @@
 #include "pid.h"
 #include "motor.h"
 #include "bsp_pwm.h"
-
+/*FreeRTOS相关头文件*/
+#include "FreeRTOS.h"
+#include "task.h"
 struct prot_frame_parser_t
 {
     uint8_t *recv_ptr;
@@ -390,4 +392,9 @@ void set_computer_value(uint8_t cmd, uint8_t ch, void *data, uint8_t num)
 //   usart_send_string(&set_packet);
 }
 
+void rxTask(void *parameter)
+{
+  // receiving_process();
+  vTaskDelay(20);
+}
 /**********************************************************************************************/

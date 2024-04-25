@@ -39,14 +39,14 @@ I (..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_ipa.h)(0x65A4D76D)
 I (..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h)(0x65A4D76D)
 I (..\User\main.h3.\User\systick.he.\FreeRTOS\Include\FreeRTOS.h)(0x00000000)
 I (D:\keil_v5\ARM\ARMCLANG\include\stddef.hO\User\FreeRTOSConfig.h)(0x00000000)
-I (..\Hardware\Include\bsp_usart.h)(0x6629116C)
+I (..\Hardware\Include\bsp_usart.h)(0x6629CAF4)
 I (D:\keil_v5\ARM\ARMCLANG\include\stdio.hh\FreeRTOS\Include\projdefs.h)(0x00000000)
 I (..\FreeRTOS\Include\portable.h)(0x64020E50)
 I (..\FreeRTOS\Include\deprecated_definitions.h)(0x64020E50)
 I (..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h)(0x64020E50)
 I (..\FreeRTOS\Include\mpu_wrappers.hm.\FreeRTOS\Include\task.h)(0x00000000)
 I (..\FreeRTOS\Include\list.h)(0x64020E50)
-F (..\User\main.c)(0x6627A7F7)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/main.o -MD)
+F (..\User\main.c)(0x6629BB9C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/main.o -MD)
 I (..\FreeRTOS\Include\FreeRTOS.h)(0x64020E50)
 I (D:\keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6569B012)
 I (D:\keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569B012)
@@ -96,8 +96,9 @@ I (..\User\main.hc.\User\sys.h::\keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x00000
 I (..\User\delay.h..\Hardware\Include\bsp_led.h)(0x00000000)
 I (..\Hardware\Include\bsp_key.hc.\Hardware\Include\bsp_pwm.h)(0x00000000)
 I (..\Hardware\Include\bsp_basic_timer.ha.\Hardware\Include\bsp_dma.h)(0x00000000)
-I (..\App\Include\motor.h)(0x6628F481)
-F (..\User\system.c)(0x6624D743)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/system.o -MD)
+I (..\App\Include\motor.hp.\App\Include\protocol.h)(0x00000000)
+I (..\App\Include\encoder.h)(0x66277525)
+F (..\User\system.c)(0x6629B8C1)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/system.o -MD)
 I (..\FreeRTOS\Include\FreeRTOS.h)(0x64020E50)
 I (D:\keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6569B012)
 I (D:\keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569B012)
@@ -147,7 +148,8 @@ I (..\User\main.hc.\User\sys.h::\keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x00000
 I (..\User\delay.h..\Hardware\Include\bsp_led.h)(0x00000000)
 I (..\Hardware\Include\bsp_key.hc.\Hardware\Include\bsp_pwm.h)(0x00000000)
 I (..\Hardware\Include\bsp_basic_timer.ha.\Hardware\Include\bsp_dma.h)(0x00000000)
-I (..\App\Include\motor.h)(0x6628F481)
+I (..\App\Include\motor.hp.\App\Include\protocol.h)(0x00000000)
+I (..\App\Include\encoder.h)(0x66277525)
 F (..\User\delay.c)(0x6622403D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/delay.o -MD)
 I (..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x65A4D76E)
 I (..\Firmware\CMSIS\core_cm4.hx:\keil_v5\ARM\ARMCLANG\include\stdint.h)(0x00000000)
@@ -188,7 +190,7 @@ I (..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h)(0x65A4D76D)
 I (..\User\systick.h4:\keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x00000000)
 I (D:\keil_v5\ARM\ARMCLANG\include\stddef.h)(0x6569B012)
 I (..\FreeRTOS\Include\FreeRTOS.he.\User\FreeRTOSConfig.h)(0x00000000)
-I (..\Hardware\Include\bsp_usart.h)(0x6629116C)
+I (..\Hardware\Include\bsp_usart.h)(0x6629CAF4)
 I (D:\keil_v5\ARM\ARMCLANG\include\stdio.hr\FreeRTOS\Include\projdefs.h)(0x00000000)
 I (..\FreeRTOS\Include\portable.h)(0x64020E50)
 I (..\FreeRTOS\Include\deprecated_definitions.h)(0x64020E50)
@@ -235,7 +237,7 @@ I (..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_ipa.h)(0x65A4D76D)
 I (..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h)(0x65A4D76D)
 I (..\User\systick.h4.\FreeRTOS\Include\FreeRTOS.h)(0x00000000)
 I (D:\keil_v5\ARM\ARMCLANG\include\stddef.he\User\FreeRTOSConfig.h)(0x00000000)
-I (..\Hardware\Include\bsp_usart.h)(0x6629116C)
+I (..\Hardware\Include\bsp_usart.h)(0x6629CAF4)
 I (D:\keil_v5\ARM\ARMCLANG\include\stdio.hh\FreeRTOS\Include\projdefs.h)(0x00000000)
 I (..\FreeRTOS\Include\portable.h)(0x64020E50)
 I (..\FreeRTOS\Include\deprecated_definitions.h)(0x64020E50)
@@ -243,7 +245,7 @@ I (..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h)(0x64020E50)
 I (..\FreeRTOS\Include\mpu_wrappers.hm.\FreeRTOS\Include\task.h)(0x00000000)
 I (..\FreeRTOS\Include\list.h)(0x64020E50)
 F (..\User\FreeRTOSConfig.h)(0x662231C4)()
-F (..\App\Source\motor.c)(0x6629116C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/motor.o -MD)
+F (..\App\Source\motor.c)(0x6629BF20)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/motor.o -MD)
 I (..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x65A4D76E)
 I (..\Firmware\CMSIS\core_cm4.hx:\keil_v5\ARM\ARMCLANG\include\stdint.h)(0x00000000)
 I (..\Firmware\CMSIS\core_cmInstr.he.\Firmware\CMSIS\core_cmFunc.h)(0x00000000)
@@ -415,7 +417,7 @@ I (..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_ipa.h)(0x65A4D76D)
 I (..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h)(0x65A4D76D)
 I (..\User\systick.h4:\keil_v5\ARM\ARMCLANG\include\stddef.h)(0x00000000)
 I (..\User\delay.h..\Common\Include\maths.h)(0x00000000)
-F (..\App\Source\protocol.c)(0x6629116C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/protocol.o -MD)
+F (..\App\Source\protocol.c)(0x6629BB27)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/protocol.o -MD)
 I (..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x65A4D76E)
 I (..\Firmware\CMSIS\core_cm4.hx:\keil_v5\ARM\ARMCLANG\include\stdint.h)(0x00000000)
 I (..\Firmware\CMSIS\core_cmInstr.he.\Firmware\CMSIS\core_cmFunc.h)(0x00000000)
@@ -457,14 +459,20 @@ I (D:\keil_v5\ARM\ARMCLANG\include\string.hy\App\Include\pid.h)(0x00000000)
 I (..\User\sys.hM:\keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x00000000)
 I (D:\keil_v5\ARM\ARMCLANG\include\stddef.hl\User\delay.h)(0x00000000)
 I (..\App\Include\filter.h\.\App\Include\motor.h)(0x00000000)
-I (..\Hardware\Include\bsp_pwm.h)(0x6623889C)
+I (..\Hardware\Include\bsp_pwm.h\.\FreeRTOS\Include\FreeRTOS.h)(0x00000000)
+I (..\User\FreeRTOSConfig.hp:\keil_v5\ARM\ARMCLANG\include\stdio.h)(0x00000000)
+I (..\FreeRTOS\Include\projdefs.hl.\FreeRTOS\Include\portable.h)(0x00000000)
+I (..\FreeRTOS\Include\deprecated_definitions.h)(0x64020E50)
+I (..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h)(0x64020E50)
+I (..\FreeRTOS\Include\mpu_wrappers.hm.\FreeRTOS\Include\task.h)(0x00000000)
+I (..\FreeRTOS\Include\list.h)(0x64020E50)
 F (..\Common\Source\maths.c)(0x6627AB41)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/maths.o -MD)
 I (D:\keil_v5\ARM\ARMCLANG\include\stdint.h)(0x6569B012)
 I (D:\keil_v5\ARM\ARMCLANG\include\string.h)(0x6569B012)
 I (D:\keil_v5\ARM\ARMCLANG\include\math.h..\Common\Include\axis.h)(0x00000000)
 I (..\Common\Include\maths.h)(0x6627AAC8)
-F (..\Hardware\Source\bsp_usart.c)(0x6629116C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/bsp_usart.o -MD)
-I (..\Hardware\Include\bsp_usart.h)(0x6629116C)
+F (..\Hardware\Source\bsp_usart.c)(0x6629CAF0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/bsp_usart.o -MD)
+I (..\Hardware\Include\bsp_usart.h)(0x6629CAF4)
 I (..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x65A4D76E)
 I (..\Firmware\CMSIS\core_cm4.hx:\keil_v5\ARM\ARMCLANG\include\stdint.h)(0x00000000)
 I (..\Firmware\CMSIS\core_cmInstr.he.\Firmware\CMSIS\core_cmFunc.h)(0x00000000)
@@ -584,7 +592,7 @@ I (..\User\systick.h4.\User\sys.h)(0x00000000)
 I (D:\keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x6569B012)
 I (D:\keil_v5\ARM\ARMCLANG\include\stddef.hh\User\delay.h)(0x00000000)
 I (..\Hardware\Include\bsp_led.hd:\keil_v5\ARM\ARMCLANG\include\stdio.h)(0x00000000)
-F (..\Hardware\Source\bsp_pwm.c)(0x6628D745)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/bsp_pwm.o -MD)
+F (..\Hardware\Source\bsp_pwm.c)(0x6629CC5D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O1 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../User -I ../Firmware/CMSIS -I ../Firmware/GD32F4xx_standard_peripheral/Include -I ../Firmware/CMSIS/GD/GD32F4xx/Include -I ../Hardware/Include -I ../FreeRTOS/Include -I ../FreeRTOS/Port/GCC/ARM_CM4F -I ../App/Include -I ../Common/Include-ID:/keil_v5/GigaDevice/GD32F4xx_DFP/3.0.3/Device/F4XX/Include-D__UVISION_VERSION="539" -DGD32F470 -DUSE_STDPERIPH_DRIVER -DGD32F470-o ./objects/bsp_pwm.o -MD)
 I (..\Hardware\Include\bsp_pwm.h)(0x6623889C)
 I (..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h)(0x65A4D76E)
 I (..\Firmware\CMSIS\core_cm4.hx:\keil_v5\ARM\ARMCLANG\include\stdint.h)(0x00000000)
