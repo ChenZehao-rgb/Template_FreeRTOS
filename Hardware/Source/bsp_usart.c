@@ -1,7 +1,6 @@
 #include "bsp_usart.h"
 #include "stdio.h"
 #include "bsp_dma.h"
-#include "protocol.h"
 
 uint8_t  g_recv_buff[USART_RECEIVE_LENGTH];	//接收缓冲区
 uint16_t g_recv_length = 0;					//接受数据长度
@@ -126,9 +125,11 @@ void BSP_USART_IRQHandler(void)
 	#if !RX_USART_DMA
 		if(usart_interrupt_flag_get(BSP_USART, USART_INT_FLAG_RBNE) == SET) //接收缓冲区不为空
 		{
-			// g_recv_buff[g_recv_length++] = usart_data_receive(BSP_USART);	//接收到数据到缓冲区
-			uint8_t a = usart_data_receive(BSP_USART);
-			protocol_data_recv(&a, 1);
+			g_recv_buff[g_recv_length++] = usart_data_receive(BSP_USART);	//接收到数据到缓冲区
+			if(usart_data_receive(BSP_USART) == 0x21)						//接收结束标志位，！
+			{
+
+			}
 			printf("接收到命令：%d\r\n", a);
 		}
 	#endif
@@ -149,4 +150,13 @@ void BSP_USART_IRQHandler(void)
 
 		
 	}
+}
+
+/*
+ * 解析出DataBuff中的数据
+ * 返回解析得到的数据
+ */
+float Get_Data(void)
+{
+    
 }
