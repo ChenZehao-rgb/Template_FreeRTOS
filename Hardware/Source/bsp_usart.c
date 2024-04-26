@@ -1,6 +1,8 @@
 #include "bsp_usart.h"
 #include "stdio.h"
+#include <string.h>
 #include "bsp_dma.h"
+#include "motor.h"
 
 uint8_t  g_recv_buff[USART_RECEIVE_LENGTH];	//接收缓冲区
 uint16_t g_recv_length = 0;					//接受数据长度
@@ -107,6 +109,58 @@ int fputc(int ch, FILE *f)
      return ch;
 }
 
+/*
+ * 解析出DataBuff中的数据
+ * 返回解析得到的数据
+ */
+static void Get_Data(void)
+{
+	float kp = 0.0;
+	float ki = 0.0;
+	float kd = 0.0;
+	float target = 0.0;
+
+	char *ptr = strstr((char *)g_recv_buff, "P1=");
+	if (ptr != NULL) {
+		sscanf(ptr + 3, "%f", &kp);
+		set_kp(kp);
+		printf("kp:%f\r\n", kp);
+		return;
+	}
+
+	ptr = strstr((char *)g_recv_buff, "I1=");
+	if (ptr != NULL) {
+		sscanf(ptr + 3, "%f", &ki);
+		set_ki(ki);
+		printf("ki:%f\r\n", ki);
+		return;
+	}
+
+	ptr = strstr((char *)g_recv_buff, "D1=");
+	if (ptr != NULL) {
+		sscanf(ptr + 3, "%f", &kd);
+		set_kd(kd);
+		printf("kd:%f\r\n", kd);
+		return;
+	}
+
+	ptr = strstr((char *)g_recv_buff, "D2=");
+	if (ptr != NULL) {
+		sscanf(ptr + 3, "%f", &kd);
+		set_kd(kd);
+		printf("kd:%f\r\n", kd);
+		return;
+	}
+
+	ptr = strstr((char *)g_recv_buff, "T1=");
+	if (ptr != NULL) {
+		sscanf(ptr + 3, "%f", &target);
+		set_pid_target(target);
+		// Do something with the target value
+		printf("target:%f\r\n", target);
+	}
+}
+
 /************************************************
 函数名称 ： BSP_USART_IRQHandler
 功    能 ： 串口接收中断服务函数
@@ -128,9 +182,9 @@ void BSP_USART_IRQHandler(void)
 			g_recv_buff[g_recv_length++] = usart_data_receive(BSP_USART);	//接收到数据到缓冲区
 			if(usart_data_receive(BSP_USART) == 0x21)						//接收结束标志位，！
 			{
-
+				Get_Data();
+				g_recv_length = 0;
 			}
-			printf("接收到命令：%d\r\n", a);
 		}
 	#endif
 
@@ -141,6 +195,11 @@ void BSP_USART_IRQHandler(void)
 			/*处理DMA接收数据*/
 			g_recv_length = USART_RECEIVE_LENGTH - dma_transfer_number_get(BSP_DMA, BSP_DMA_CH);
 			// printf("dma_transfer_number_get(BSP_DMA, BSP_DMA_CH)=:%d",dma_transfer_number_get(BSP_DMA, BSP_DMA_CH));
+			if(g_recv_buff[g_recv_length - 1] == 0x21)	//接收结束标志位，！
+			{
+				Get_Data();
+				g_recv_length = 0;
+			}
 			/*重新设置DMA传输*/
 			dma_channel_disable(BSP_DMA, BSP_DMA_CH);
 			dma_config();
@@ -152,11 +211,4 @@ void BSP_USART_IRQHandler(void)
 	}
 }
 
-/*
- * 解析出DataBuff中的数据
- * 返回解析得到的数据
- */
-float Get_Data(void)
-{
-    
-}
+

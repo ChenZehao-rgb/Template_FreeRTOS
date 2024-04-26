@@ -9,7 +9,6 @@ void systeminit(void)
     usart_gpio_config(115200U);
     motor_config();
     Motor_Encoder_Init();
-    protocol_init();
     /* 
     key_gpio_config();
     basic_timer_config(20000,10000);
