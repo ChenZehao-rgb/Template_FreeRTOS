@@ -30,6 +30,6 @@
 #define MOTOR2_DIR              PCout(5)
 
 void motor1_out(int32_t speed);
-void motor2_out(uint32_t value);
+void motor2_out(int32_t speed);
 void motor_config(void);              // 电机初始化
 #endif  /* BSP_PWM_H */

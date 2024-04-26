@@ -123,41 +123,66 @@ static void Get_Data(void)
 	char *ptr = strstr((char *)g_recv_buff, "P1=");
 	if (ptr != NULL) {
 		sscanf(ptr + 3, "%f", &kp);
-		set_kp(kp);
-		printf("kp:%f\r\n", kp);
+		set_pos_kp(kp);
+		printf("pos_kp:%f\r\n", kp);
 		return;
 	}
 
 	ptr = strstr((char *)g_recv_buff, "I1=");
 	if (ptr != NULL) {
 		sscanf(ptr + 3, "%f", &ki);
-		set_ki(ki);
-		printf("ki:%f\r\n", ki);
+		set_pos_ki(ki);
+		printf("pos_ki:%f\r\n", ki);
+		return;
+	}
+
+	ptr = strstr((char *)g_recv_buff, "P2=");
+	if (ptr != NULL) {
+		sscanf(ptr + 3, "%f", &kp);
+		set_speed_kp(kp);
+		printf("speed_kp:%f\r\n", kp);
+		return;
+	}
+
+	ptr = strstr((char *)g_recv_buff, "I2=");
+	if (ptr != NULL) {
+		sscanf(ptr + 3, "%f", &ki);
+		set_speed_ki(ki);
+		printf("speed_ki:%f\r\n", ki);
 		return;
 	}
 
 	ptr = strstr((char *)g_recv_buff, "D1=");
 	if (ptr != NULL) {
 		sscanf(ptr + 3, "%f", &kd);
-		set_kd(kd);
-		printf("kd:%f\r\n", kd);
+		set_pos_kd(kd);
+		printf("pos_kd:%f\r\n", kd);
 		return;
 	}
 
 	ptr = strstr((char *)g_recv_buff, "D2=");
 	if (ptr != NULL) {
 		sscanf(ptr + 3, "%f", &kd);
-		set_kd(kd);
-		printf("kd:%f\r\n", kd);
+		set_speed_kd(kd);
+		printf("speed_kd:%f\r\n", kd);
 		return;
 	}
 
 	ptr = strstr((char *)g_recv_buff, "T1=");
 	if (ptr != NULL) {
 		sscanf(ptr + 3, "%f", &target);
-		set_pid_target(target);
+		set_pos_pid_target(target);
 		// Do something with the target value
-		printf("target:%f\r\n", target);
+		printf("pos_target:%f\r\n", target);
+		return;
+	}
+
+	ptr = strstr((char *)g_recv_buff, "T2=");
+	if (ptr != NULL) {
+		sscanf(ptr + 3, "%f", &target);
+		set_speed_pid_target(target);
+		// Do something with the target value
+		printf("speed_target:%f\r\n", target);
 	}
 }
 
