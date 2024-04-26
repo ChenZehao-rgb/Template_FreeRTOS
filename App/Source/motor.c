@@ -24,12 +24,12 @@ static float get_motor_velocity(int32_t cnt_diff, int dt, double line)
 void motorTask(void *parameter)
 {
     int target = 180;
-    PID_Param_Init(&PosionPID, target, 19, 1, 0.5, 10000, 10000);
+    PID_Param_Init(&PosionPID, target, 19, 1, 0.5, 5000, 5000);
 
     float pid_temp[3] = {PosionPID.Kp, PosionPID.Ki, PosionPID.Kd};
     
 
-    motor1_out(0);
+    
     printf("motor_init\r\n");
     while (1)
     {
@@ -50,7 +50,7 @@ void motorTask(void *parameter)
         // printf("velocity:%d, speed:%d\r\n", cnt_diff, speed);
         // printf("motor1_encoder_value:%d circle_count:%d\r\n",Motor1_Encoder_Data, circle_count);
         printf("real:%d, %.2f, %d\n", cnt_diff, PosionPID.target_val, speed);
-        vTaskDelay(dt); 
+        vTaskDelay(dt);
     }
     
 }

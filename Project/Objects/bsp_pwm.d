@@ -38,4 +38,5 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h \
   ..\User\sys.h ..\User\systick.h \
   D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
-  D:\keil_v5\ARM\ARMCLANG\include\stddef.h ..\User\delay.h
+  D:\keil_v5\ARM\ARMCLANG\include\stddef.h ..\User\delay.h \
+  ..\Hardware\Include\bsp_usart.h
