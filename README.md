@@ -1,12 +1,23 @@
-# This is an `<h1>` header, which is the largest
+# GD32F470_FreeRTOS_Template
 
-GD32F470_FreeRTOS_Template
+## 接口
 
-软件
-1、pwm 2路 timer4,ch1/ch2,PA1/PA2
-2、编码器ADC
-3、mpu6050 i2c
+| 两路电机pwm | timer4 |
+|------------|--------|
+| ch1        | PA1    |
+| ch2        | PA2    |
 
-硬件电路
-1、电源板
-2、按键/远程遥控
+| 编码器     | timer1 |
+|------------|--------|
+| 编码器A相  | ch0, PA15 |
+| 编码器B相  | ch1, PB3  |
+
+| 编码器     | timer2 |
+|------------|--------|
+| 编码器A相  | ch0, PC6  |
+| 编码器B相  | ch1, PC7  |
+
+| 串口     |  usart0 |
+|----------|-------|
+| TX       | PA9   |
+| RX       | PA10  |
