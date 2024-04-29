@@ -41,7 +41,7 @@ static void motor_speed(void)
     last_circle = current_circle;
     last_cnt = current_cnt;
 
-    printf("real:%d, %.2f, %d\n", cnt_diff, PosionPID.target_val, cnt_speed);
+    // printf("real:%d, %.2f, %d\n", cnt_diff, PosionPID.target_val, cnt_speed);
 }
 
 static void motor_angle(void)

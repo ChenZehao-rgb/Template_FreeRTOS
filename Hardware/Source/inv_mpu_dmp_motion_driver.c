@@ -25,6 +25,7 @@
 #include "dmpmap.h"
 #include "bsp_usart.h"
 #include "systick.h"
+#include "delay.h"
 
 //定义目标板采用MSP430
 #define  MOTION_DRIVER_TARGET_MSP430
@@ -40,7 +41,7 @@
 #if defined MOTION_DRIVER_TARGET_MSP430
 //#include "msp430.h"
 //#include "msp430_clock.h"
-#define delay_ms    delay_1ms
+#define delay_ms    delay_ms
 #define get_ms      mget_ms
 #define log_i 		printf
 #define log_e  		printf

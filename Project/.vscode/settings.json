@@ -18,6 +18,8 @@
         "axis.h": "c",
         "protocol.h": "c",
         "bsp_usart.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "mpu6050.h": "c",
+        "attitude.h": "c"
     }
 }

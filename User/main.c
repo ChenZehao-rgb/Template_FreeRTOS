@@ -59,7 +59,7 @@ void startTask(void *parameter)
 
     xTaskCreate(motorTask, "motorTask", 150, NULL, 3, NULL);
 
-    // xTaskCreate(rxTask, "rxTask", 150, NULL, 4, NULL);
+    xTaskCreate(Read_attitudeTask, "Read_attitudeTask", 150, NULL, 4, NULL);
     
     printf("Free heap: %d bytes\n", xPortGetFreeHeapSize());			/*打印剩余堆栈大小*/
 	

@@ -22,8 +22,8 @@
 #include "bsp_basic_timer.h"
 #include "bsp_dma.h"
 #include "motor.h"
-#include "protocol.h"
 #include "encoder.h"
+#include "attitude.h"
 
 void systeminit(void);
 

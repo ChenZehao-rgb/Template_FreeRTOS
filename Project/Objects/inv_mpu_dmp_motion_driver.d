@@ -41,4 +41,6 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h \
   ..\Hardware\Include\inv_mpu_dmp_motion_driver.h \
   ..\Hardware\Include\dmpKey.h ..\Hardware\Include\dmpmap.h \
-  ..\Hardware\Include\bsp_usart.h ..\User\systick.h
+  ..\Hardware\Include\bsp_usart.h ..\User\systick.h ..\User\delay.h \
+  ..\User\sys.h D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stddef.h
