@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\Objects\Template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6210000: Last Updated: Tue Apr 30 16:44:04 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6210000: Last Updated: Fri May 17 17:24:26 2024
 <BR><P>
-<H3>Maximum Stack Usage =        392 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        408 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 Read_attitudeTask &rArr; mpu_dmp_get_data &rArr; dmp_read_fifo &rArr; mpu_read_fifo_stream &rArr; mpu_reset_fifo &rArr; delay_ms &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; __2printf
 <P>
@@ -901,8 +901,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU6050_ReadData
 </UL>
 
-<P><STRONG><a name="[6e]"></a>Read_attitudeTask</STRONG> (Thumb, 140 bytes, Stack size 16 bytes, attitude.o(.text.Read_attitudeTask))
-<BR><BR>[Stack]<UL><LI>Max Depth = 392<LI>Call Chain = Read_attitudeTask &rArr; mpu_dmp_get_data &rArr; dmp_read_fifo &rArr; mpu_read_fifo_stream &rArr; mpu_reset_fifo &rArr; delay_ms &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; __2printf
+<P><STRONG><a name="[6e]"></a>Read_attitudeTask</STRONG> (Thumb, 136 bytes, Stack size 32 bytes, attitude.o(.text.Read_attitudeTask))
+<BR><BR>[Stack]<UL><LI>Max Depth = 408<LI>Call Chain = Read_attitudeTask &rArr; mpu_dmp_get_data &rArr; dmp_read_fifo &rArr; mpu_read_fifo_stream &rArr; mpu_reset_fifo &rArr; delay_ms &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mpu_dmp_get_data

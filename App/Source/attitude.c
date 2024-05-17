@@ -25,9 +25,7 @@ void Read_attitudeTask(void *parameter)
         //获取欧拉角
         if( mpu_dmp_get_data(&pitch,&roll,&yaw) == 0 )
         { 
-            printf("\r\npitch =%.2f\r\n", pitch);
-            printf("\r\nroll =%.2f\r\n", roll);
-            printf("\r\nyaw =%.2f\r\n", yaw);
+            printf("pitch:%.2f, %.2f, %.2f\n", pitch, roll, yaw);
         }      
         vTaskDelay(20);//根据设置的采样率，不可设置延时过大
     }
