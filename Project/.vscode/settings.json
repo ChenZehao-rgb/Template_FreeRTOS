@@ -20,6 +20,11 @@
         "bsp_usart.h": "c",
         "string.h": "c",
         "mpu6050.h": "c",
-        "attitude.h": "c"
+        "attitude.h": "c",
+        "inv_mpu.h": "c",
+        "inv_mpu_dmp_motion_driver.h": "c",
+        "dmpkey.h": "c",
+        "dmpmap.h": "c",
+        "sensors.h": "c"
     }
 }

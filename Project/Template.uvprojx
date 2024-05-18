@@ -449,6 +449,11 @@
               <FileType>1</FileType>
               <FilePath>..\App\Source\attitude.c</FilePath>
             </File>
+            <File>
+              <FileName>sensors.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\Source\sensors.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
