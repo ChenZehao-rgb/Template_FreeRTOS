@@ -1,11 +1,19 @@
 #include "sensors.h"
-
+#include <stdbool.h>
+#include <stdint.h>
+#include <math.h>
+#include "maths.h"
 /**	
  * 姿态解算规则如下：
  *     ROLL  = 绕X轴旋转，右手定则，逆时针为正顺时针为负。
  *     PITCH = 绕Y轴旋转，右手定则，逆时针为正顺时针为负。
  *     YAW   = 绕Z轴旋转，右手定则，逆时针为正顺时针为负。
  */
+
+#define DCM_KP_ACC			0.600f		//加速度补偿陀螺仪PI参数
+#define DCM_KI_ACC			0.005f
+
+#define SPIN_RATE_LIMIT     20			//旋转速率
 
 static float q0 = 1.0f, q1 = 0.0f, q2 = 0.0f, q3 = 0.0f;//四元数
 static float rMat[3][3];//四元数的旋转矩阵
@@ -37,3 +45,78 @@ static void imuComputeRotationMatrix(void)
     rMat[2][1] = 2.0f * (q0q1 + q2q3);
     rMat[2][2] = 1.0f - 2.0f * (q1q1 + q2q2);
 }
+
+static float invSqrt(float x)
+{
+    return 1.0f / sqrtf(x);
+}
+
+//四元数归一化
+static void imuMahonyAHRSupdate(float gx, float gy, float gz, 
+                                float ax, float ay, float az, 
+                                float mx, float my, float mz, float dt)
+{
+    static float integralAccX = 0.0f, integralAccY = 0.0f, integralAccZ = 0.0f; //加速度计积分误差
+    static float integralMagX = 0.0f, integralMagY = 0.0f, integralMagZ = 0.0f; //磁力计积分误差
+    float ex, ey, ez;
+
+    const float spin_rate_sq = sq(gx) + sq(gy) + sq(gz); //计算旋转速率（rad/s）
+
+    //Step 1: Yaw correction
+
+    //Step 2: Roll and pitch correction
+    if(!((ax == 0.0f) && (ay == 0.0f) && (az == 0.0f)))
+    {
+        //单位化加速度计测量值
+        const float accRecipNorm = invSqrt(sq(ax) + sq(ay) + sq(az));
+        ax *= accRecipNorm;
+        ay *= accRecipNorm;
+        az *= accRecipNorm;
+
+        //加速度计测量值与重力方向的误差，向量叉乘
+        ex = ay * rMat[2][2] - az * rMat[2][1];
+        ey = az * rMat[2][0] - ax * rMat[2][2];
+        ez = ax * rMat[2][1] - ay * rMat[2][0];
+
+        //累计误差补偿
+        if(DCM_KI_ACC > 0.0f)
+        {
+            integralAccX += ex * DCM_KI_ACC * dt;
+            integralAccY += ey * DCM_KI_ACC * dt;
+            integralAccZ += ez * DCM_KI_ACC * dt;
+            gx += integralAccX;
+            gy += integralAccY;
+            gz += integralAccZ;
+        }
+
+        //误差补偿
+        gx += ex * DCM_KP_ACC;
+        gy += ey * DCM_KP_ACC;
+        gz += ez * DCM_KP_ACC;
+    }
+
+    //一阶近似算法，四元数运动学方程的离散化形式和积分
+    gx*= (0.5f * dt);
+    gy*= (0.5f * dt);
+    gz*= (0.5f * dt);
+
+    const float qa = q0;
+    const float qb = q1;
+    const float qc = q2;
+    q0 += (-qb * gx - qc * gy - q3 * gz);
+    q1 += (qa * gx + qc * gz - q3 * gy);
+    q2 += (qa * gy - qb * gz + q3 * gx);
+    q3 += (qa * gz + qb * gy - qc * gx);
+
+    //四元数归一化
+    const float quatRecipNorm = invSqrt(sq(q0) + sq(q1) + sq(q2) + sq(q3));
+    q0 *= quatRecipNorm;
+    q1 *= quatRecipNorm;
+    q2 *= quatRecipNorm;
+    q3 *= quatRecipNorm;
+
+    //四元数转换为旋转矩阵
+    imuComputeRotationMatrix();
+}
+
+//更新欧拉角
