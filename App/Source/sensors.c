@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <math.h>
+#include <stdio.h>
 #include "maths.h"
 /**	
  * 姿态解算规则如下：
@@ -54,7 +55,8 @@ static float invSqrt(float x)
 //四元数归一化
 static void imuMahonyAHRSupdate(float gx, float gy, float gz, 
                                 float ax, float ay, float az, 
-                                float mx, float my, float mz, float dt)
+                                float mx, float my, float mz, 
+                                int useMag, float dt)
 {
     static float integralAccX = 0.0f, integralAccY = 0.0f, integralAccZ = 0.0f; //加速度计积分误差
     static float integralMagX = 0.0f, integralMagY = 0.0f, integralMagZ = 0.0f; //磁力计积分误差
@@ -63,6 +65,10 @@ static void imuMahonyAHRSupdate(float gx, float gy, float gz,
     const float spin_rate_sq = sq(gx) + sq(gy) + sq(gz); //计算旋转速率（rad/s）
 
     //Step 1: Yaw correction
+    if (useMag) 
+	{
+		
+	}
 
     //Step 2: Roll and pitch correction
     if(!((ax == 0.0f) && (ay == 0.0f) && (az == 0.0f)))
@@ -120,3 +126,33 @@ static void imuMahonyAHRSupdate(float gx, float gy, float gz,
 }
 
 //更新欧拉角
+static void imuUpdateEulerAngles(attitude_t *attitude)
+{
+    //计算欧拉角
+    attitude->roll = RADIANS_TO_DEGREES(atan2_approx(rMat[2][1], rMat[2][2]));
+    attitude->pitch = RADIANS_TO_DEGREES((0.5f*M_PIf) - acos_approx(-rMat[2][0]));//arcsin=0.5pi = arccos
+    attitude->yaw = RADIANS_TO_DEGREES(atan2_approx(rMat[1][0], rMat[0][0]));
+
+    if (attitude->yaw < 0.0f)
+    {
+        attitude->yaw +=360.0f;
+    }
+}
+
+void imuUpdateAttitude(const sensorData_t *sensorData, attitude_t *attitude, float dt)
+{
+    Axis3f acc = sensorData->acc;
+    Axis3f gyro = sensorData->gyro;
+    Axis3f mag = sensorData->mag;
+
+    //角速度单位由度每秒转换为弧度每秒
+    gyro.x = gyro.x * DEG2RAD;
+    gyro.y = gyro.y * DEG2RAD;
+    gyro.z = gyro.z * DEG2RAD;
+
+    //计算四元数和旋转矩阵
+    imuMahonyAHRSupdate(gyro.x, gyro.y, gyro.z, acc.x, acc.y, acc.z, mag.x, mag.y, mag.z, 0, dt);
+
+    //更新欧拉角
+    imuUpdateEulerAngles(&attitude);
+}
