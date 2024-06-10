@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,GD32F470</Define>
               <Undefine></Undefine>
-              <IncludePath>..\User;..\Firmware\CMSIS;..\Firmware\GD32F4xx_standard_peripheral\Include;..\Firmware\CMSIS\GD\GD32F4xx\Include;..\Hardware\Include;..\FreeRTOS\Include;..\FreeRTOS\Port\GCC\ARM_CM4F;..\App\Include;..\Common\Include</IncludePath>
+              <IncludePath>..\User;..\Firmware\CMSIS;..\Firmware\GD32F4xx_standard_peripheral\Include;..\Firmware\CMSIS\GD\GD32F4xx\Include;..\Hardware\Include;..\FreeRTOS\Include;..\FreeRTOS\Port\GCC\ARM_CM4F;..\App\Include;..\Common\Include;..\Sensors\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -440,11 +440,6 @@
               <FilePath>..\App\Source\encoder.c</FilePath>
             </File>
             <File>
-              <FileName>filter.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\App\Source\filter.c</FilePath>
-            </File>
-            <File>
               <FileName>attitude.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\App\Source\attitude.c</FilePath>
@@ -453,6 +448,26 @@
               <FileName>sensors.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\App\Source\sensors.c</FilePath>
+            </File>
+            <File>
+              <FileName>imu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\Source\imu.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Sensors</GroupName>
+          <Files>
+            <File>
+              <FileName>acc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Sensors\Source\acc.c</FilePath>
+            </File>
+            <File>
+              <FileName>gyro.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Sensors\Source\gyro.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -463,6 +478,11 @@
               <FileName>maths.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Common\Source\maths.c</FilePath>
+            </File>
+            <File>
+              <FileName>filter.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Common\Source\filter.c</FilePath>
             </File>
           </Files>
         </Group>

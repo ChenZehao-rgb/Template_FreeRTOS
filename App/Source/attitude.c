@@ -2,10 +2,13 @@
 #include "bsp_usart.h"
 #include "mpu6050.h"
 #include "inv_mpu.h"
+#include "sensors.h"
 #include "delay.h"
 /*FreeRTOS相关头文件*/
 #include "FreeRTOS.h"
 #include "task.h"
+
+
 
 void Read_attitudeTask(void *parameter)
 {
