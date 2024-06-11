@@ -8,8 +8,6 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-
-
 void Read_attitudeTask(void *parameter)
 {
     float pitch=0,roll=0,yaw=0;                 //欧拉角

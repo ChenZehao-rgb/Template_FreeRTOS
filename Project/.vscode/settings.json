@@ -27,6 +27,7 @@
         "dmpmap.h": "c",
         "sensors.h": "c",
         "imu.h": "c",
-        "sensors_types.h": "c"
+        "sensors_types.h": "c",
+        "gyro.h": "c"
     }
 }

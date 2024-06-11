@@ -24,6 +24,28 @@ typedef union
 	int16_t axis[3];
 } Axis3i16;
 
+typedef union
+{
+	struct
+	{
+		int32_t x;
+		int32_t y;
+		int32_t z;
+	};
+	int32_t axis[3];
+} Axis3i32;
+
+typedef union
+{
+	struct
+	{
+		int64_t x;
+		int64_t y;
+		int64_t z;
+	};
+	int64_t axis[3];
+} Axis3i64;
+
 //姿态数据结构体
 typedef struct
 {
