@@ -24,6 +24,7 @@
 #include "motor.h"
 #include "encoder.h"
 #include "attitude.h"
+#include "sensors.h"
 
 void systeminit(void);
 

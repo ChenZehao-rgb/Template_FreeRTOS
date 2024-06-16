@@ -1,7 +1,8 @@
 #ifndef ATTITUDE_H
 #define ATTITUDE_H
 
+#include "sensors_types.h"
 // Add your code here
-void Read_attitudeTask(void *parameter);
+void attitudeTask(void *parameter);
 
 #endif // ATTITUDE_H

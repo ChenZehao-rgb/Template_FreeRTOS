@@ -1,8 +1,8 @@
-./objects/filter.o: ..\App\Source\filter.c \
+./objects/filter.o: ..\Common\Source\filter.c \
   D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
   D:\keil_v5\ARM\ARMCLANG\include\stdint.h \
   D:\keil_v5\ARM\ARMCLANG\include\string.h \
-  D:\keil_v5\ARM\ARMCLANG\include\math.h ..\App\Include\filter.h \
+  D:\keil_v5\ARM\ARMCLANG\include\math.h ..\Common\Include\filter.h \
   ..\User\sys.h ..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h \
   ..\Firmware\CMSIS\core_cm4.h ..\Firmware\CMSIS\core_cmInstr.h \
   ..\Firmware\CMSIS\core_cmFunc.h ..\Firmware\CMSIS\core_cm4_simd.h \

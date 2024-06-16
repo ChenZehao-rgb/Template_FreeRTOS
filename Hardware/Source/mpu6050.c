@@ -13,7 +13,7 @@
 #include "stdio.h"
 #include "systick.h"
 #include "delay.h"
-#include "sensors_types.h"
+
 /******************************************************************
  * 函 数 名 称：MPU6050_GPIO_Init
  * 函 数 说 明：MPU6050的引脚初始化

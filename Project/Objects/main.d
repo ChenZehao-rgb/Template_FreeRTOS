@@ -49,4 +49,5 @@
   ..\Hardware\Include\bsp_key.h ..\Hardware\Include\bsp_pwm.h \
   ..\Hardware\Include\bsp_basic_timer.h ..\Hardware\Include\bsp_dma.h \
   ..\App\Include\motor.h ..\App\Include\encoder.h \
-  ..\App\Include\attitude.h
+  ..\App\Include\attitude.h ..\Sensors\Include\sensors_types.h \
+  ..\App\Include\sensors.h

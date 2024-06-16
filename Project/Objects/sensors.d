@@ -1,7 +1,7 @@
-./objects/system.o: ..\User\system.c ..\User\system.h \
-  ..\FreeRTOS\Include\FreeRTOS.h \
-  D:\keil_v5\ARM\ARMCLANG\include\stddef.h \
-  D:\keil_v5\ARM\ARMCLANG\include\stdint.h ..\User\FreeRTOSConfig.h \
+./objects/sensors.o: ..\App\Source\sensors.c ..\App\Include\sensors.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
+  ..\Sensors\Include\sensors_types.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stdint.h ..\Hardware\Include\mpu6050.h \
   ..\Firmware\CMSIS\GD\GD32F4xx\Include\gd32f4xx.h \
   ..\Firmware\CMSIS\core_cm4.h ..\Firmware\CMSIS\core_cmInstr.h \
   ..\Firmware\CMSIS\core_cmFunc.h ..\Firmware\CMSIS\core_cm4_simd.h \
@@ -37,17 +37,13 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_exmc.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_ipa.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h \
-  ..\Hardware\Include\bsp_usart.h ..\User\systick.h \
-  D:\keil_v5\ARM\ARMCLANG\include\stdio.h ..\FreeRTOS\Include\projdefs.h \
-  ..\FreeRTOS\Include\portable.h \
+  ..\Hardware\Include\inv_mpu.h ..\User\delay.h ..\User\sys.h \
+  ..\User\systick.h D:\keil_v5\ARM\ARMCLANG\include\stddef.h \
+  ..\Hardware\Include\bsp_usart.h ..\FreeRTOS\Include\FreeRTOS.h \
+  ..\User\FreeRTOSConfig.h D:\keil_v5\ARM\ARMCLANG\include\stdio.h \
+  ..\FreeRTOS\Include\projdefs.h ..\FreeRTOS\Include\portable.h \
   ..\FreeRTOS\Include\deprecated_definitions.h \
   ..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h \
   ..\FreeRTOS\Include\mpu_wrappers.h ..\FreeRTOS\Include\task.h \
-  ..\FreeRTOS\Include\list.h D:\keil_v5\ARM\ARMCLANG\include\string.h \
-  ..\User\main.h ..\User\sys.h D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
-  ..\User\delay.h ..\Hardware\Include\bsp_led.h \
-  ..\Hardware\Include\bsp_key.h ..\Hardware\Include\bsp_pwm.h \
-  ..\Hardware\Include\bsp_basic_timer.h ..\Hardware\Include\bsp_dma.h \
-  ..\App\Include\motor.h ..\App\Include\encoder.h \
-  ..\App\Include\attitude.h ..\Sensors\Include\sensors_types.h \
-  ..\App\Include\sensors.h
+  ..\FreeRTOS\Include\list.h ..\FreeRTOS\Include\queue.h \
+  ..\FreeRTOS\Include\semphr.h

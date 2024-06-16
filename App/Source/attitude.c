@@ -1,33 +1,26 @@
 #include "attitude.h"
 #include "bsp_usart.h"
-#include "mpu6050.h"
-#include "inv_mpu.h"
 #include "sensors.h"
+
+#include "imu.h"
 #include "delay.h"
 /*FreeRTOS相关头文件*/
 #include "FreeRTOS.h"
 #include "task.h"
 
-void Read_attitudeTask(void *parameter)
-{
-    float pitch=0,roll=0,yaw=0;                 //欧拉角
+sensorData_t sensorData;
+attitude_t attitude;
 
-    //MPU6050初始化
-    MPU6050_Init();
-    //DMP初始化
-    while( mpu_dmp_init() )
+void attitudeTask(void *parameter)
+{
+    
+    vTaskDelay(2000);  //等待传感器初始化完成
+    while (1)
     {
-        printf("dmp error\r\n");
-        delay_ms(200);
+        vTaskDelay(2); //姿态解算频率为500Hz
+        sensorsAcquire(&sensorData);
+        imuUpdateAttitude(&sensorData, &attitude, 0.002f);
+        // printf("roll:%.2f pitch:%.2f yaw:%.2f\r\n", attitude.roll, attitude.pitch, attitude.yaw);
     }
-    printf("Initialization Data Succeed \r\n");
-    while(1) 
-    {
-        //获取欧拉角
-        if( mpu_dmp_get_data(&pitch,&roll,&yaw) == 0 )
-        { 
-            printf("pitch:%.2f, %.2f, %.2f\n", pitch, roll, yaw);
-        }      
-        vTaskDelay(20);//根据设置的采样率，不可设置延时过大
-    }
+    
 }

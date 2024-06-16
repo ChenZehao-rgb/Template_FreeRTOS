@@ -1,5 +1,6 @@
+//姿态解算代码
 #include "imu.h"
-#include "sensors_types.h"
+
 #include <stdbool.h>
 #include <stdint.h>
 #include <math.h>
@@ -155,5 +156,5 @@ void imuUpdateAttitude(const sensorData_t *sensorData, attitude_t *attitude, flo
     imuMahonyAHRSupdate(gyro.x, gyro.y, gyro.z, acc.x, acc.y, acc.z, mag.x, mag.y, mag.z, 0, dt);
 
     //更新欧拉角
-    imuUpdateEulerAngles(&attitude);
+    imuUpdateEulerAngles(attitude);
 }

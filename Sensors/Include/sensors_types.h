@@ -1,6 +1,8 @@
 #ifndef SENSORS_TYPES_H
 #define SENSORS_TYPES_H
 
+#include <stdint.h>
+
 //传感器参数类型定义
 typedef union sensors
 {
@@ -12,6 +14,8 @@ typedef union sensors
     };
     float axis[3];
 } Axis3f;
+
+
 
 typedef union
 {

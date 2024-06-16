@@ -3,7 +3,7 @@
 
 #include "gd32f4xx.h"
 #include <stdbool.h>
-
+#include "sensors_types.h"
 
 //端口移植
 #define RCU_SDA RCU_GPIOB

@@ -39,7 +39,8 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_ipa.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h \
   ..\Hardware\Include\inv_mpu_dmp_motion_driver.h \
-  ..\Hardware\Include\mpu6050.h ..\User\systick.h \
-  ..\Hardware\Include\bsp_usart.h ..\User\delay.h ..\User\sys.h \
+  ..\Hardware\Include\mpu6050.h \
   D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
+  ..\Sensors\Include\sensors_types.h ..\User\systick.h \
+  ..\Hardware\Include\bsp_usart.h ..\User\delay.h ..\User\sys.h \
   D:\keil_v5\ARM\ARMCLANG\include\stddef.h
