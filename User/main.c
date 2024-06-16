@@ -57,8 +57,6 @@ void startTask(void *parameter)
 
     xTaskCreate(LED_Task, "LED_Task", 150, NULL, 2, NULL);
 
-    xTaskCreate(motorTask, "motorTask", 150, NULL, 3, NULL);
-
     xTaskCreate(attitudeTask, "attitudeTask", 150, NULL, 4, NULL);
 
     xTaskCreate(sensorsTask, "sensorsTask", 150, NULL, 4, NULL);

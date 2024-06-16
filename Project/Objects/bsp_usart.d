@@ -38,6 +38,7 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h \
   ..\User\systick.h D:\keil_v5\ARM\ARMCLANG\include\stdio.h \
   D:\keil_v5\ARM\ARMCLANG\include\string.h ..\Hardware\Include\bsp_dma.h \
-  ..\App\Include\motor.h ..\User\sys.h \
+  ..\App\Include\pid.h ..\User\sys.h \
   D:\keil_v5\ARM\ARMCLANG\include\stdbool.h \
-  D:\keil_v5\ARM\ARMCLANG\include\stddef.h ..\User\delay.h
+  D:\keil_v5\ARM\ARMCLANG\include\stddef.h ..\User\delay.h \
+  ..\Common\Include\filter.h

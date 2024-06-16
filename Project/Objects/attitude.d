@@ -40,6 +40,7 @@
   ..\User\systick.h ..\App\Include\sensors.h \
   D:\keil_v5\ARM\ARMCLANG\include\stdbool.h ..\User\delay.h \
   ..\User\sys.h D:\keil_v5\ARM\ARMCLANG\include\stddef.h \
+  ..\App\Include\pid.h ..\Common\Include\filter.h ..\App\Include\motor.h \
   ..\FreeRTOS\Include\FreeRTOS.h ..\User\FreeRTOSConfig.h \
   D:\keil_v5\ARM\ARMCLANG\include\stdio.h ..\FreeRTOS\Include\projdefs.h \
   ..\FreeRTOS\Include\portable.h \

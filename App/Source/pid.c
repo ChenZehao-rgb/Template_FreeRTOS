@@ -40,3 +40,39 @@ float PosionPID_Realize(PidObject *pid, float actual_val)
 	//返回输出值
 	return pid->output_val;
 }
+
+//设置目标值
+void set_pid_target(PidObject *PID, float temp_val)
+{
+	PID->target_val = temp_val;
+}
+
+
+//获取目标值
+float get_pid_target(PidObject *PID)
+{
+	return PID->target_val;
+}
+
+//设置pid参数
+void set_pid(PidObject *PID, float kp, float ki, float kd)
+{
+	PID->Kp = kp;
+	PID->Ki = ki;
+	PID->Kd = kd;
+}
+
+void set_kp(PidObject *PID, float kp)
+{
+	PID->Kp = kp;
+}
+
+void set_ki(PidObject *PID, float ki)
+{
+	PID->Ki = ki;
+}
+
+void set_kd(PidObject *PID, float kd)
+{
+	PID->Kd = kd;
+}

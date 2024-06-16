@@ -2,11 +2,16 @@
 #include "stdio.h"
 #include <string.h>
 #include "bsp_dma.h"
-#include "motor.h"
+#include "pid.h"
 
 uint8_t  g_recv_buff[USART_RECEIVE_LENGTH];	//接收缓冲区
 uint16_t g_recv_length = 0;					//接受数据长度
 uint8_t  g_recv_complete_flag = 0;			//接受数据完成标志位
+
+extern PidObject motor1_pid;
+extern PidObject motor2_pid;
+extern PidObject pitch_pid;
+extern PidObject roll_pid;
 
 /************************************************
 函数名称 ： usart_gpio_config
@@ -113,6 +118,9 @@ int fputc(int ch, FILE *f)
  * 解析出DataBuff中的数据
  * 返回解析得到的数据
  */
+
+int in_or_outer = 0; //调内环还是外环pid参数
+
 static void Get_Data(void)
 {
 	float kp = 0.0;
@@ -123,66 +131,132 @@ static void Get_Data(void)
 	char *ptr = strstr((char *)g_recv_buff, "P1=");
 	if (ptr != NULL) {
 		sscanf(ptr + 3, "%f", &kp);
-		set_pos_kp(kp);
-		printf("pos_kp:%f\r\n", kp);
+		if(in_or_outer == 0)
+		{
+			set_kp(&motor1_pid, kp);
+			printf("motor1_kp:%f\r\n", kp);
+		}
+		else
+		{
+			set_kp(&pitch_pid, kp);
+			printf("pitch_kp:%f\r\n", kp);
+		}
 		return;
 	}
 
 	ptr = strstr((char *)g_recv_buff, "I1=");
 	if (ptr != NULL) {
 		sscanf(ptr + 3, "%f", &ki);
-		set_pos_ki(ki);
-		printf("pos_ki:%f\r\n", ki);
+		if(in_or_outer == 0)
+		{
+			set_ki(&motor1_pid, ki);
+			printf("motor1_ki:%f\r\n", ki);
+		}
+		else
+		{
+			set_ki(&pitch_pid, ki);
+			printf("pitch_ki:%f\r\n", ki);
+		}
 		return;
 	}
 
 	ptr = strstr((char *)g_recv_buff, "P2=");
 	if (ptr != NULL) {
 		sscanf(ptr + 3, "%f", &kp);
-		set_speed_kp(kp);
-		printf("speed_kp:%f\r\n", kp);
+		if(in_or_outer == 0)
+		{
+			set_kp(&motor2_pid, kp);
+			printf("motor2_kp:%f\r\n", kp);
+		}
+		else
+		{
+			set_kp(&roll_pid, kp);
+			printf("roll_kp:%f\r\n", kp);
+		}
+		
 		return;
 	}
 
 	ptr = strstr((char *)g_recv_buff, "I2=");
 	if (ptr != NULL) {
 		sscanf(ptr + 3, "%f", &ki);
-		set_speed_ki(ki);
-		printf("speed_ki:%f\r\n", ki);
+		if(in_or_outer == 0)
+		{
+			set_ki(&motor2_pid, ki);
+			printf("motor2_ki:%f\r\n", ki);
+		}
+		else
+		{
+			set_ki(&roll_pid, ki);
+			printf("roll_ki:%f\r\n", ki);
+		}
+		
 		return;
 	}
 
 	ptr = strstr((char *)g_recv_buff, "D1=");
 	if (ptr != NULL) {
 		sscanf(ptr + 3, "%f", &kd);
-		set_pos_kd(kd);
-		printf("pos_kd:%f\r\n", kd);
+		if(in_or_outer == 0)
+		{
+			set_kd(&motor1_pid, kd);
+			printf("motor1_kd:%f\r\n", kd);
+		}
+		else
+		{
+			set_kd(&pitch_pid, kd);
+			printf("pitch_kd:%f\r\n", kd);
+		}
+		
 		return;
 	}
 
 	ptr = strstr((char *)g_recv_buff, "D2=");
 	if (ptr != NULL) {
 		sscanf(ptr + 3, "%f", &kd);
-		set_speed_kd(kd);
-		printf("speed_kd:%f\r\n", kd);
+		if(in_or_outer == 0)
+		{
+			set_kd(&motor2_pid, kd);
+			printf("motor2_kd:%f\r\n", kd);
+		}
+		else
+		{
+			set_kd(&roll_pid, kd);
+			printf("roll_kd:%f\r\n", kd);
+		}
+		
 		return;
 	}
 
 	ptr = strstr((char *)g_recv_buff, "T1=");
 	if (ptr != NULL) {
 		sscanf(ptr + 3, "%f", &target);
-		set_pos_pid_target(target);
-		// Do something with the target value
-		printf("pos_target:%f\r\n", target);
+		if(in_or_outer == 0)
+		{
+			set_pid_target(&motor1_pid, target);
+			printf("motor1_target:%f\r\n", target);
+		}
+		else
+		{
+			set_pid_target(&pitch_pid, target);
+			printf("pitch_target:%f\r\n", target);
+		}
 		return;
 	}
 
 	ptr = strstr((char *)g_recv_buff, "T2=");
 	if (ptr != NULL) {
 		sscanf(ptr + 3, "%f", &target);
-		set_speed_pid_target(target);
-		// Do something with the target value
-		printf("speed_target:%f\r\n", target);
+		if(in_or_outer == 0)
+		{
+			set_pid_target(&motor2_pid, target);
+			printf("motor2_target:%f\r\n", target);
+		}
+		else
+		{
+			set_pid_target(&roll_pid, target);
+			printf("roll_target:%f\r\n", target);
+		}
 	}
 }
 

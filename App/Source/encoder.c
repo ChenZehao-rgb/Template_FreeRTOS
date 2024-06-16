@@ -1,5 +1,9 @@
 #include "encoder.h"
 
+//电机编码器结构体
+encoder_counter motor1_encoder = {0, 0, 0, 0, 0, 0, 0};
+encoder_counter motor2_encoder = {0, 0, 0, 0, 0, 0, 0};
+
 static void Encoder_GPIO_Config(void)
 {
     /* 使能时钟 */
@@ -126,17 +130,15 @@ uint32_t Motor2_Encoder_Value(void)
     return encoder_value;
 }
 
-
-int circle_count = 0;
 void Motor1_Encoder_IRQHandler(void)
 {
     if(timer_interrupt_flag_get(MOTOR1_encoder_TIMER,TIMER_INT_UP) == SET)
 	{
         uint8_t dir = (TIMER_CTL0(MOTOR1_encoder_TIMER) & 0x10) >> 4;
         if(dir) 
-            circle_count--;
+            motor1_encoder.circle_count--;
         else
-            circle_count++;
+            motor1_encoder.circle_count++;
         timer_interrupt_flag_clear(MOTOR1_encoder_TIMER,TIMER_INT_UP);
     }
 }
@@ -144,7 +146,12 @@ void Motor1_Encoder_IRQHandler(void)
 void Motor2_Encoder_IRQHandler(void)
 {
     if(timer_interrupt_flag_get(MOTOR2_encoder_TIMER,TIMER_INT_UP) == SET)
-		{
-       timer_interrupt_flag_clear(MOTOR2_encoder_TIMER,TIMER_INT_UP);
+	{
+        uint8_t dir = (TIMER_CTL0(MOTOR2_encoder_TIMER) & 0x10) >> 4;
+        if(dir) 
+            motor2_encoder.circle_count--;
+        else
+            motor2_encoder.circle_count++;
+        timer_interrupt_flag_clear(MOTOR2_encoder_TIMER,TIMER_INT_UP);
     }
 }

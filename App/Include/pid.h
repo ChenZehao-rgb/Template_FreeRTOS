@@ -27,6 +27,11 @@ typedef struct
 
 void PID_Param_Init(PidObject *pid, float target, float kp, float ki, float kd, float iLimit, float oLimit);
 float PosionPID_Realize(PidObject *pid, float actual_val);
-
+void set_pid_target(PidObject *PID, float temp_val);
+float get_pid_target(PidObject *PID);
+void set_pid(PidObject *PID, float kp, float ki, float kd);
+void set_kp(PidObject *PID, float kp);
+void set_ki(PidObject *PID, float ki);
+void set_kd(PidObject *PID, float kd);
 
 #endif  /* PID_H */

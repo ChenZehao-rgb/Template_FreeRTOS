@@ -4,6 +4,17 @@
 #include "gd32f4xx.h"
 #include "sys.h"
 
+typedef struct
+{
+    int circle_count;
+    int last_circle;
+    int current_circle;
+    uint32_t last_cnt;
+    uint32_t current_cnt;
+    int16_t cnt_diff;
+    int16_t cnt_speed;
+}encoder_counter;
+
 //motor1
 #define MOTOR1_encoder_TIMER_RCU  	 RCU_TIMER1      // 定时器时钟
 #define MOTOR1_encoder_TIMER      	 TIMER1          // 定时器
