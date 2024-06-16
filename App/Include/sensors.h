@@ -4,9 +4,7 @@
 #include <stdbool.h>
 #include "sensors_types.h"
 
-bool sensorsReadGyro(Axis3f *gyro);
-bool sensorsReadAcc(Axis3f *acc);
 void sensorsTask(void *parameter);
-void sensorsAcquire(sensorData_t *sensors);
+void sensorsAcquire(attitude_t *attitude);
 
 #endif // SENSORS_H

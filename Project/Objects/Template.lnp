@@ -9,7 +9,6 @@
 ".\objects\encoder.o"
 ".\objects\attitude.o"
 ".\objects\sensors.o"
-".\objects\imu.o"
 ".\objects\maths.o"
 ".\objects\filter.o"
 ".\objects\bsp_usart.o"

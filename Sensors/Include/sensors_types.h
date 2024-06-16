@@ -66,4 +66,5 @@ typedef struct
     Axis3f mag; //磁力计
 } sensorData_t;
 
+
 #endif // SENSORS_TYPES_H

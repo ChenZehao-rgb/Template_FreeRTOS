@@ -38,8 +38,8 @@
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_ipa.h \
   ..\Firmware\GD32F4xx_standard_peripheral\Include\gd32f4xx_tli.h \
   ..\User\systick.h ..\App\Include\sensors.h \
-  D:\keil_v5\ARM\ARMCLANG\include\stdbool.h ..\App\Include\imu.h \
-  ..\User\delay.h ..\User\sys.h D:\keil_v5\ARM\ARMCLANG\include\stddef.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stdbool.h ..\User\delay.h \
+  ..\User\sys.h D:\keil_v5\ARM\ARMCLANG\include\stddef.h \
   ..\FreeRTOS\Include\FreeRTOS.h ..\User\FreeRTOSConfig.h \
   D:\keil_v5\ARM\ARMCLANG\include\stdio.h ..\FreeRTOS\Include\projdefs.h \
   ..\FreeRTOS\Include\portable.h \

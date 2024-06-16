@@ -449,11 +449,6 @@
               <FileType>1</FileType>
               <FilePath>..\App\Source\sensors.c</FilePath>
             </File>
-            <File>
-              <FileName>imu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\App\Source\imu.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
