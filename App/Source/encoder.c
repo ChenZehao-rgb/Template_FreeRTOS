@@ -126,7 +126,7 @@ uint32_t Motor2_Encoder_Value(void)
 {
     uint32_t encoder_value=0;
     encoder_value = timer_counter_read(MOTOR2_encoder_TIMER);
-    timer_counter_value_config(MOTOR2_encoder_TIMER, 0);
+//    timer_counter_value_config(MOTOR2_encoder_TIMER, 0);
     return encoder_value;
 }
 

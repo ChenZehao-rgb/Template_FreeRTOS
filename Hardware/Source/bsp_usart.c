@@ -8,6 +8,8 @@ uint8_t  g_recv_buff[USART_RECEIVE_LENGTH];	//接收缓冲区
 uint16_t g_recv_length = 0;					//接受数据长度
 uint8_t  g_recv_complete_flag = 0;			//接受数据完成标志位
 
+extern int32_t palse_motor1;
+extern int32_t palse_motor2;
 extern PidObject motor1_pid;
 extern PidObject motor2_pid;
 extern PidObject pitch_pid;
@@ -234,6 +236,7 @@ static void Get_Data(void)
 		if(in_or_outer == 0)
 		{
 			set_pid_target(&motor1_pid, target);
+			palse_motor1 = (int32_t)target;
 			printf("motor1_target:%f\r\n", target);
 		}
 		else
@@ -250,6 +253,7 @@ static void Get_Data(void)
 		if(in_or_outer == 0)
 		{
 			set_pid_target(&motor2_pid, target);
+			palse_motor2 = (int32_t)target;
 			printf("motor2_target:%f\r\n", target);
 		}
 		else

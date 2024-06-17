@@ -8,6 +8,8 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
+int32_t palse_motor1 = 0;
+int32_t palse_motor2 = 0;
 extern encoder_counter motor1_encoder;
 extern encoder_counter motor2_encoder;
 
@@ -57,10 +59,25 @@ void motor2_speed(void)
 void motor_init(void)
 {
     //pid参数初始化
-    PID_Param_Init(&motor1_pid, 0, 5, 1, 0.5, 500, 4500);
+    PID_Param_Init(&motor1_pid, 2500, 5, 1, 0.5, 500, 4500);
     PID_Param_Init(&motor2_pid, 0, 5, 1, 0.5, 500, 4500);
     //初始化编码器
     Motor_Encoder_Init();
     //初始化PWM
     motor_config();
+}
+
+//电机测试
+void motor_test_Task(void *parameter)
+{
+    motor_init();
+    // uint32_t palse = 10000;
+    while (1)
+    {
+        vTaskDelay(100); //控制频率为50Hz
+        motor1_out(palse_motor1);
+        motor2_out(palse_motor2);
+        
+        // timer_channel_output_pulse_value_config(MOTOR_PWM_TIMER, MOTOR1_PWM_CHANNEL, palse);
+    }
 }

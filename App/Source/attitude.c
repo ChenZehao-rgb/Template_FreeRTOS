@@ -22,8 +22,8 @@ PidObject motor2_pid;
 //姿态控制PID参数初始化
 void attitude_pid_init(void)
 {
-    PID_Param_Init(&roll_pid, 0, 0.5, 0.1, 0.1, 0, 0);
-    PID_Param_Init(&pitch_pid, 0, 0.5, 0.1, 0.1, 0, 0);
+    PID_Param_Init(&roll_pid, 10, 0.5, 0.1, 0.1, 200, 4500);
+    PID_Param_Init(&pitch_pid, 10, 0.5, 0.1, 0.1, 200, 4500);
 }
 
 void attitudeTask(void *parameter)
@@ -54,7 +54,7 @@ void attitudeTask(void *parameter)
         motor1_speed();
         motor2_speed();
 
-        // printf("roll:%.2f pitch:%.2f yaw:%.2f\r\n", attitude.roll, attitude.pitch, attitude.yaw);
+        printf("roll:%.2f, %.2f, %.2f\n", attitude.roll, attitude.pitch, attitude.yaw);
     }
     
 }

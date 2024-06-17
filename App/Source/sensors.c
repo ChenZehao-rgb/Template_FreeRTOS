@@ -49,7 +49,7 @@ void sensorsTask(void *parameter)
             xQueueSend(PitchDataQueue, &pitch, 0);
             xQueueSend(RollDataQueue, &roll, 0);
             xQueueSend(YawDataQueue, &yaw, 0);
-            printf("dmp_pitch:%.2f, %.2f, %.2f\n", pitch, roll, yaw);
+            // printf("dmp_pitch:%.2f, %.2f, %.2f\n", pitch, roll, yaw);
         }
     }
 }

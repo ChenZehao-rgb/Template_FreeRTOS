@@ -7,4 +7,5 @@
 void motor1_speed(void);
 void motor2_speed(void);
 void motor_init(void);
+void motor_test_Task(void *parameter);
 #endif  /* MOTOR_H */

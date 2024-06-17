@@ -94,8 +94,8 @@ static void pwm_config(uint16_t pre,uint16_t per)
 
 void motor1_out(int32_t speed) {
     uint32_t abs_speed = abs(speed); // 取绝对值
-    if (abs_speed > 5000) {
-        abs_speed = 5000; // 限制速度在 0 到 5000 之间
+    if (abs_speed > 10000) {
+        abs_speed = 10000; // 限制速度在 0 到 5000 之间
     }
 
     if (speed < 0) {
@@ -106,28 +106,28 @@ void motor1_out(int32_t speed) {
         MOTOR1_DIR = 1;
     }
 
-	timer_channel_output_pulse_value_config(MOTOR_PWM_TIMER, MOTOR1_PWM_CHANNEL, 5000 - abs_speed);
+	timer_channel_output_pulse_value_config(MOTOR_PWM_TIMER, MOTOR1_PWM_CHANNEL, 10000 - abs_speed);
 }
 void motor2_out(int32_t speed) {
     uint32_t abs_speed = abs(speed); // 取绝对值
-    if (abs_speed > 5000) {
-        abs_speed = 5000; // 限制速度在 0 到 5000 之间
+    if (abs_speed > 10000) {
+        abs_speed = 10000; // 限制速度在 0 到 5000 之间
     }
 
     if (speed < 0) {
         // 电机逆时针转
-        MOTOR1_DIR = 0;
+        MOTOR2_DIR = 0;
     } else {
         // 电机顺时针转
-        MOTOR1_DIR = 1;
+        MOTOR2_DIR = 1;
     }
 	
-	timer_channel_output_pulse_value_config(MOTOR_PWM_TIMER, MOTOR2_PWM_CHANNEL, 5000 - abs_speed);
+	timer_channel_output_pulse_value_config(MOTOR_PWM_TIMER, MOTOR2_PWM_CHANNEL, 10000 - abs_speed);
 }
 
 void motor_config(void)
 {
 	dir_gpio_config();
-	pwm_config(200,5000); //50hz，周期20ms
+	pwm_config(20,10000); //50hz，周期20ms
 	
 }
