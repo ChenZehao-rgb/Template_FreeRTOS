@@ -59,8 +59,8 @@ void motor2_speed(void)
 void motor_init(void)
 {
     //pid参数初始化
-    PID_Param_Init(&motor1_pid, 150, 10,   1, 0.5, 500, 2000);
-    PID_Param_Init(&motor2_pid, 150, 10,   1, 0.5, 500, 2000);
+    PID_Param_Init(&motor1_pid, 50, 7,   1.7, 0.5, 500, 2000);
+    PID_Param_Init(&motor2_pid, 50, 7,   1.8, 0.5, 500, 2000);
     //初始化编码器
     Motor_Encoder_Init();
     //初始化PWM
@@ -72,14 +72,18 @@ void motor_test_Task(void *parameter)
 {
     motor_init();
     // uint32_t palse = 10000;
+    motor1_out(0);
+    motor2_out(0);
+    delay_ms(1000);
     while (1)
     {
-        vTaskDelay(100); //控制频率为50Hz
+        vTaskDelay(20); //控制频率为50Hz
         // motor1_out(palse_motor1);
         // motor2_out(palse_motor2);
-        motor1_speed();
+        // motor1_speed();
+        // printf("motor1:%d,%.2f\n",motor1_encoder.cnt_diff, motor1_pid.target_val);
         motor2_speed();
-
+        printf("motor2:%d,%.2f\n",motor2_encoder.cnt_diff, motor2_pid.target_val);
         // timer_channel_output_pulse_value_config(MOTOR_PWM_TIMER, MOTOR1_PWM_CHANNEL, palse);
     }
 }

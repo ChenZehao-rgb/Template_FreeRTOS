@@ -49,7 +49,7 @@ void attitudeTask(void *parameter)
         pitch_out = PosionPID_Realize(&pitch_pid, attitude.pitch);
 
         //内环电机转速控制
-        motor1_pid.target_val = pitch_out;
+        motor1_pid.target_val = -pitch_out;
         motor2_pid.target_val = roll_out;
         motor1_speed();
         motor2_speed();
