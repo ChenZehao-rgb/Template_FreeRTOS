@@ -454,39 +454,3 @@ char MPU6050_Init(void)
         }
         return 0;
 }
-
-bool mpu6050GyroRead(Axis3i16 *gyroRaw)
-{
-    uint8_t buf[6];
-    uint8_t reg = 0;
-    //MPU6050_GYRO_OUT = MPU6050陀螺仪数据寄存器地址
-    //陀螺仪数据输出寄存器总共由6个寄存器组成，
-    //输出X/Y/Z三个轴的陀螺仪传感器数据，高字节在前，低字节在后。
-    //每一个轴16位，按顺序为xyz
-    reg = MPU6050_ReadData(0x68,MPU6050_GYRO_OUT,6,buf);
-    if( reg == 0 )
-    {
-        gyroRaw->x = (((int16_t)buf[0]) << 8) | buf[1];
-        gyroRaw->y = (((int16_t)buf[2]) << 8) | buf[3];
-        gyroRaw->z = (((int16_t)buf[4]) << 8) | buf[5];
-    }
-    return reg;  //读取正确，返回0
-}
-
-bool mpu6050AccRead(Axis3i16 *accRaw)
-{
-    uint8_t buf[6];
-    uint8_t reg = 0;
-    //MPU6050_ACC_OUT = MPU6050加速度数据寄存器地址
-    //加速度数据输出寄存器总共由6个寄存器组成，
-    //输出X/Y/Z三个轴的加速度传感器数据，高字节在前，低字节在后。
-    //每一个轴16位，按顺序为xyz
-    reg = MPU6050_ReadData(0x68,MPU6050_ACC_OUT,6,buf);
-    if( reg == 0 )
-    {
-        accRaw->x = (((int16_t)buf[0]) << 8) | buf[1];
-        accRaw->y = (((int16_t)buf[2]) << 8) | buf[3];
-        accRaw->z = (((int16_t)buf[4]) << 8) | buf[5];
-    }
-    return reg; //读取正确，返回0
-}

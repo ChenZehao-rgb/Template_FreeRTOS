@@ -59,12 +59,14 @@ void motor2_speed(void)
 void motor_init(void)
 {
     //pid参数初始化
-    PID_Param_Init(&motor1_pid, 50, 7,   1.7, 0.5, 500, 2000);
+    PID_Param_Init(&motor1_pid, 50, 7,   1.7, 0.5, 500, 10000);
     PID_Param_Init(&motor2_pid, 50, 7,   1.8, 0.5, 500, 2000);
     //初始化编码器
     Motor_Encoder_Init();
     //初始化PWM
     motor_config();
+    motor1_out(0);
+    motor2_out(0);
 }
 
 //电机测试
@@ -72,8 +74,7 @@ void motor_test_Task(void *parameter)
 {
     motor_init();
     // uint32_t palse = 10000;
-    motor1_out(0);
-    motor2_out(0);
+    
     delay_ms(1000);
     while (1)
     {

@@ -27,6 +27,7 @@ typedef struct
 
 void PID_Param_Init(PidObject *pid, float target, float kp, float ki, float kd, float iLimit, float oLimit);
 float PosionPID_Realize(PidObject *pid, float actual_val);
+float AttitudePID_Realize(PidObject *pid, float actual_val, float relax, short gyro);
 void set_pid_target(PidObject *PID, float temp_val);
 float get_pid_target(PidObject *PID);
 void set_pid(PidObject *PID, float kp, float ki, float kd);

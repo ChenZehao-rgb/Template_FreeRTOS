@@ -81,8 +81,6 @@ void MPU6050ReadAcc(short *accData);
 float MPU6050_GetTemp(void);
 uint8_t MPU6050ReadID(void);
 
-bool mpu6050GyroRead(Axis3i16 *gyroRaw);
-bool mpu6050AccRead(Axis3i16 *accRaw);
 
 
 #endif

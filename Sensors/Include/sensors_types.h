@@ -56,6 +56,8 @@ typedef struct
     float roll;
     float pitch;
     float yaw;
+	short gyro_x;
+	short gyro_y;
 } attitude_t;
 
 //传感器数据结构体

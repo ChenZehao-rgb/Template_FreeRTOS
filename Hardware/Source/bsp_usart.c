@@ -121,7 +121,7 @@ int fputc(int ch, FILE *f)
  * 返回解析得到的数据
  */
 
-int in_or_outer = 0; //调内环还是外环pid参数
+int in_or_outer = 1; //调内环还是外环pid参数
 
 static void Get_Data(void)
 {
