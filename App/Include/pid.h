@@ -26,8 +26,13 @@ typedef struct
 } pidInit_t;
 
 void PID_Param_Init(PidObject *pid, float target, float kp, float ki, float kd, float iLimit, float oLimit);
+
 float PosionPID_Realize(PidObject *pid, float actual_val);
 float AttitudePID_Realize(PidObject *pid, float actual_val, float relax, short gyro);
+int ctrl_angle_realize(PidObject *pid, float setpoint, float actual_angle, short gyro);
+float ctrl_speed_realize(PidObject *pid, float zero_angle, int speed);
+float ctrl_speed_realize2(PidObject *pid, float zero_angle, int speed, uint32_t enc);
+
 void set_pid_target(PidObject *PID, float temp_val);
 float get_pid_target(PidObject *PID);
 void set_pid(PidObject *PID, float kp, float ki, float kd);

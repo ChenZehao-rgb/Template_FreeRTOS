@@ -26,17 +26,17 @@ void MPU6050_GPIO_Init(void)
 {
   /* 使能时钟 */
     rcu_periph_clock_enable(RCU_SCL);
-        rcu_periph_clock_enable(RCU_SDA);
+    rcu_periph_clock_enable(RCU_SDA);
     
-        /* 配置SCL为输出模式 */
-        gpio_mode_set(PORT_SCL,GPIO_MODE_OUTPUT,GPIO_PUPD_NONE,GPIO_SCL);
-        /* 配置为推挽输出 50MHZ */
-        gpio_output_options_set(PORT_SCL,GPIO_OTYPE_PP,GPIO_OSPEED_50MHZ,GPIO_SCL);
+    /* 配置SCL为输出模式 */
+    gpio_mode_set(PORT_SCL,GPIO_MODE_OUTPUT,GPIO_PUPD_NONE,GPIO_SCL);
+    /* 配置为推挽输出 50MHZ */
+    gpio_output_options_set(PORT_SCL,GPIO_OTYPE_PP,GPIO_OSPEED_50MHZ,GPIO_SCL);
         
-        /* 配置SDA为输出模式 */
-        gpio_mode_set(PORT_SDA,GPIO_MODE_OUTPUT,GPIO_PUPD_NONE,GPIO_SDA);
-        /* 配置为推挽输出 50MHZ */
-        gpio_output_options_set(PORT_SDA,GPIO_OTYPE_PP,GPIO_OSPEED_50MHZ,GPIO_SDA);
+    /* 配置SDA为输出模式 */
+    gpio_mode_set(PORT_SDA,GPIO_MODE_OUTPUT,GPIO_PUPD_NONE,GPIO_SDA);
+    /* 配置为推挽输出 50MHZ */
+    gpio_output_options_set(PORT_SDA,GPIO_OTYPE_PP,GPIO_OSPEED_50MHZ,GPIO_SDA);
 }
 
 
@@ -428,29 +428,29 @@ uint8_t MPU6050ReadID(void)
 char MPU6050_Init(void)
 {
     MPU6050_GPIO_Init();
-        delay_ms(10);
-        //复位6050
-        MPU6050_WriteReg(0x68,MPU6050_RA_PWR_MGMT_1, 1,(uint8_t*)(0x80));
-        delay_ms(100);
-        //电源管理寄存器
-        //选择X轴陀螺作为参考PLL的时钟源，设置CLKSEL=001
-        MPU6050_WriteReg(0x68,MPU6050_RA_PWR_MGMT_1,1, (uint8_t*)(0x00));
+    delay_ms(10);
+    //复位6050
+    MPU6050_WriteReg(0x68,MPU6050_RA_PWR_MGMT_1, 1,(uint8_t*)(0x80));
+    delay_ms(100);
+    //电源管理寄存器
+    //选择X轴陀螺作为参考PLL的时钟源，设置CLKSEL=001
+    MPU6050_WriteReg(0x68,MPU6050_RA_PWR_MGMT_1,1, (uint8_t*)(0x00));
         
-        MPU_Set_Gyro_Fsr(3);                                                                                //陀螺仪传感器,±2000dps
-        MPU_Set_Accel_Fsr(0);                                                                                //加速度传感器,±2g
-        MPU_Set_Rate(50);                
+    MPU_Set_Gyro_Fsr(3);                       //陀螺仪传感器,±2000dps
+    MPU_Set_Accel_Fsr(0);                      //加速度传感器,±2g
+    MPU_Set_Rate(50);                
 
-        MPU6050_WriteReg(0x68,MPU_INT_EN_REG , 1,(uint8_t*)0x00);        //关闭所有中断
-        MPU6050_WriteReg(0x68,MPU_USER_CTRL_REG,1,(uint8_t*)0x00);        //I2C主模式关闭
-        MPU6050_WriteReg(0x68,MPU_FIFO_EN_REG,1,(uint8_t*)0x00);          //关闭FIFO
-        MPU6050_WriteReg(0x68,MPU_INTBP_CFG_REG,1,(uint8_t*)0X80);        //INT引脚低电平有效
+    MPU6050_WriteReg(0x68,MPU_INT_EN_REG , 1,(uint8_t*)0x00);        //关闭所有中断
+    MPU6050_WriteReg(0x68,MPU_USER_CTRL_REG,1,(uint8_t*)0x00);        //I2C主模式关闭
+    MPU6050_WriteReg(0x68,MPU_FIFO_EN_REG,1,(uint8_t*)0x00);          //关闭FIFO
+    MPU6050_WriteReg(0x68,MPU_INTBP_CFG_REG,1,(uint8_t*)0X80);        //INT引脚低电平有效
           
-        if( MPU6050ReadID() == 0 )//检查是否有6050
-        {       
-                MPU6050_WriteReg(0x68,MPU6050_RA_PWR_MGMT_1, 1,(uint8_t*)0x01);//设置CLKSEL,PLL X轴为参考
-                MPU6050_WriteReg(0x68,MPU_PWR_MGMT2_REG, 1,(uint8_t*)0x00);//加速度与陀螺仪都工作
-                MPU_Set_Rate(50);        
-                return 1;
-        }
-        return 0;
+    if( MPU6050ReadID() == 0 )//检查是否有6050
+    {       
+        MPU6050_WriteReg(0x68,MPU6050_RA_PWR_MGMT_1, 1,(uint8_t*)0x01);//设置CLKSEL,PLL X轴为参考
+        MPU6050_WriteReg(0x68,MPU_PWR_MGMT2_REG, 1,(uint8_t*)0x00);//加速度与陀螺仪都工作
+        MPU_Set_Rate(50);        
+        return 1;
+    }
+    return 0;
 }

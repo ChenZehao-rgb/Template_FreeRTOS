@@ -72,6 +72,55 @@ float AttitudePID_Realize(PidObject *pid, float actual_val, float relax, short g
 	return pid->output_val;
 }
 
+//外环 角度环控制
+int ctrl_angle_realize(PidObject *pid, float setpoint, float actual_angle, short gyro)
+{
+	pid->Error = setpoint - actual_angle;
+	pid->output_val = pid->Kp*pid->Error + pid->Kd*gyro;
+	//输出限幅
+	if (pid->oLimit != 0)
+	{
+		pid->output_val = constrainf(pid->output_val, -pid->oLimit, pid->oLimit);
+	}
+	return (int)pid->output_val;
+}
+
+//内环 速度环控制
+float ctrl_speed_realize(PidObject *pid, float zero_angle, int speed)
+{
+	pid->Error = 0 - speed;
+	pid->integral += pid->Error;
+	//积分项限幅
+	if (pid->iLimit != 0)
+	{
+		pid->integral = constrainf(pid->integral, -pid->iLimit, pid->iLimit);
+	}
+	pid->output_val = pid->Kp*pid->Error + pid->Ki*pid->integral;
+	//输出限幅
+	if (pid->oLimit != 0)
+	{
+		pid->output_val = constrainf(pid->output_val, -pid->oLimit, pid->oLimit);
+	}
+	return (zero_angle + pid->output_val);	//速度环输出值作为角度环的输入
+}
+
+float ctrl_speed_realize2(PidObject *pid, float zero_angle, int speed, uint32_t enc)
+{
+	pid->Error = 0 - speed;
+	pid->integral += pid->Error;
+	//积分项限幅
+	if (pid->iLimit != 0)
+	{
+		pid->integral = constrainf(pid->integral, -pid->iLimit, pid->iLimit);
+	}
+	pid->output_val = pid->Kp*pid->Error + pid->Ki*enc;
+	//输出限幅
+	if (pid->oLimit != 0)
+	{
+		pid->output_val = constrainf(pid->output_val, -pid->oLimit, pid->oLimit);
+	}
+	return (zero_angle + pid->output_val);	//速度环输出值作为角度环的输入
+}
 //设置目标值
 void set_pid_target(PidObject *PID, float temp_val)
 {

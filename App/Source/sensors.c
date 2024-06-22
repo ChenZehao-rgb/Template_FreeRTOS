@@ -42,12 +42,10 @@ void sensorsInit(void)
 void sensorsTask(void *parameter)
 {
     float pitch = 0, roll = 0, yaw = 0; //欧拉角
-    
-
     sensorsInit();
     while (1)
     {
-        vTaskDelay(20);
+        vTaskDelay(20); //运行周期10ms
 
         //获取欧拉角
         if (mpu_dmp_get_data(&pitch, &roll, &yaw) == 0)

@@ -10,11 +10,15 @@ uint8_t  g_recv_complete_flag = 0;			//接受数据完成标志位
 
 extern int32_t palse_motor1;
 extern int32_t palse_motor2;
+
+extern PidObject Angle_x_pid;
+extern PidObject Speed_x_pid;  //轮子驱动，前后平衡
+extern PidObject Angle_y_pid;
+extern PidObject Speed_y_pid;  //动量轮驱动，左右平衡
+
+//电机转速控制pid结构体
 extern PidObject motor1_pid;
 extern PidObject motor2_pid;
-extern PidObject pitch_pid;
-extern PidObject roll_pid;
-
 /************************************************
 函数名称 ： usart_gpio_config
 功    能 ： 串口配置GPIO
@@ -121,7 +125,7 @@ int fputc(int ch, FILE *f)
  * 返回解析得到的数据
  */
 
-int in_or_outer = 1; //调内环还是外环pid参数
+int in_or_outer = 0; //调内环还是外环pid参数
 
 static void Get_Data(void)
 {
@@ -140,7 +144,7 @@ static void Get_Data(void)
 		}
 		else
 		{
-			set_kp(&pitch_pid, kp);
+			// set_kp(&pitch_pid, kp);
 			printf("pitch_kp:%f\r\n", kp);
 		}
 		return;
@@ -156,7 +160,7 @@ static void Get_Data(void)
 		}
 		else
 		{
-			set_ki(&pitch_pid, ki);
+			// set_ki(&pitch_pid, ki);
 			printf("pitch_ki:%f\r\n", ki);
 		}
 		return;
@@ -172,7 +176,7 @@ static void Get_Data(void)
 		}
 		else
 		{
-			set_kp(&roll_pid, kp);
+			// set_kp(&roll_pid, kp);
 			printf("roll_kp:%f\r\n", kp);
 		}
 		
@@ -189,7 +193,7 @@ static void Get_Data(void)
 		}
 		else
 		{
-			set_ki(&roll_pid, ki);
+			// set_ki(&roll_pid, ki);
 			printf("roll_ki:%f\r\n", ki);
 		}
 		
@@ -206,7 +210,7 @@ static void Get_Data(void)
 		}
 		else
 		{
-			set_kd(&pitch_pid, kd);
+			// set_kd(&pitch_pid, kd);
 			printf("pitch_kd:%f\r\n", kd);
 		}
 		
@@ -223,7 +227,7 @@ static void Get_Data(void)
 		}
 		else
 		{
-			set_kd(&roll_pid, kd);
+			// set_kd(&roll_pid, kd);
 			printf("roll_kd:%f\r\n", kd);
 		}
 		
@@ -241,7 +245,7 @@ static void Get_Data(void)
 		}
 		else
 		{
-			set_pid_target(&pitch_pid, target);
+			// set_pid_target(&pitch_pid, target);
 			printf("pitch_target:%f\r\n", target);
 		}
 		return;
@@ -258,7 +262,7 @@ static void Get_Data(void)
 		}
 		else
 		{
-			set_pid_target(&roll_pid, target);
+			// set_pid_target(&roll_pid, target);
 			printf("roll_target:%f\r\n", target);
 		}
 	}

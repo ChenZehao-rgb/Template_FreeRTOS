@@ -15,11 +15,11 @@
 #define GPIO_SCL GPIO_PIN_9
 
 //设置SDA输出模式
-#define SDA_OUT()        gpio_mode_set(PORT_SDA,GPIO_MODE_OUTPUT,GPIO_MODE_OUTPUT,GPIO_SDA)
+#define SDA_OUT()       gpio_mode_set(PORT_SDA,GPIO_MODE_OUTPUT,GPIO_MODE_OUTPUT,GPIO_SDA)
 //设置SDA输入模式
 #define SDA_IN()        gpio_mode_set(PORT_SDA,GPIO_MODE_INPUT,GPIO_MODE_OUTPUT,GPIO_SDA)
 //获取SDA引脚的电平变化
-#define SDA_GET()        gpio_input_bit_get(PORT_SDA,GPIO_SDA)
+#define SDA_GET()       gpio_input_bit_get(PORT_SDA,GPIO_SDA)
 //SDA与SCL输出
 #define SDA(x)          gpio_bit_write(PORT_SDA,GPIO_SDA, (x?SET:RESET))
 #define SCL(x)          gpio_bit_write(PORT_SCL,GPIO_SCL, (x?SET:RESET))

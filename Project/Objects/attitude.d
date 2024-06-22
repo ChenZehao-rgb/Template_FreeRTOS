@@ -41,9 +41,10 @@
   D:\keil_v5\ARM\ARMCLANG\include\stdbool.h ..\User\delay.h \
   ..\User\sys.h D:\keil_v5\ARM\ARMCLANG\include\stddef.h \
   ..\App\Include\pid.h ..\Common\Include\filter.h ..\App\Include\motor.h \
-  ..\Hardware\Include\bsp_pwm.h ..\FreeRTOS\Include\FreeRTOS.h \
-  ..\User\FreeRTOSConfig.h D:\keil_v5\ARM\ARMCLANG\include\stdio.h \
-  ..\FreeRTOS\Include\projdefs.h ..\FreeRTOS\Include\portable.h \
+  ..\Hardware\Include\bsp_pwm.h ..\App\Include\encoder.h \
+  ..\FreeRTOS\Include\FreeRTOS.h ..\User\FreeRTOSConfig.h \
+  D:\keil_v5\ARM\ARMCLANG\include\stdio.h ..\FreeRTOS\Include\projdefs.h \
+  ..\FreeRTOS\Include\portable.h \
   ..\FreeRTOS\Include\deprecated_definitions.h \
   ..\FreeRTOS\Port\GCC\ARM_CM4F\portmacro.h \
   ..\FreeRTOS\Include\mpu_wrappers.h ..\FreeRTOS\Include\task.h \
